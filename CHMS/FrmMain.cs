@@ -506,34 +506,16 @@ namespace CHMS
 
         //下载员工信息
         public static FrmDownloadUser objFrmDownloadUser = null;
-        private void 下载人事ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 下载员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (objFrmDownloadUser == null)
-            {
-                objFrmDownloadUser = new FrmDownloadUser();
-                objFrmDownloadUser.Show();
-            }
-            else
-            {
-                objFrmDownloadUser.Activate();//激活只能在最小化的时候起作用
-                objFrmDownloadUser.WindowState = FormWindowState.Normal;
-            }
+
         }
 
         //上传员工信息
         public static FrmUpload objFrmUpload = null;
-        private void 上传人事ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 上传员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (objFrmUpload == null)
-            {
-                objFrmUpload = new FrmUpload();
-                objFrmUpload.Show();
-            }
-            else
-            {
-                objFrmUpload.Activate();//激活只能在最小化的时候起作用
-                objFrmUpload.WindowState = FormWindowState.Normal;
-            }
+
         }
 
         #endregion

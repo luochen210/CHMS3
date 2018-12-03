@@ -30,6 +30,45 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tmsCHMS = new System.Windows.Forms.MenuStrip();
+            this.设备管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设备参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.下载考勤ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.下载员工信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.上传员工信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.人事管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.员工设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.员工档案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.员工通讯录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.部门信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.公司信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.考勤管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.原始考勤ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.考勤异常ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.请假登记ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.请假统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.考勤日报ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.考勤月报ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.假期设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.法定假日ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.人员排班ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.排班查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.时段设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.班次设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.常用工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.计算器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.记事本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.画图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据同步ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssCurrentName = new System.Windows.Forms.ToolStripStatusLabel();
@@ -40,45 +79,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timCurrent = new System.Windows.Forms.Timer(this.components);
-            this.设备管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.下载考勤ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.下载员工信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.上传员工信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.设备参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.人事管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.员工设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.员工档案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.员工通讯录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.部门信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.公司信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.考勤管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.时段设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.班次设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.人员排班ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.排班查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.假期设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.法定假日ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.原始考勤ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.考勤异常ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.请假登记ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.请假统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.考勤日报ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.考勤月报ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.常用工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.计算器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.记事本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.画图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.数据同步ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsCHMS.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -97,6 +97,278 @@
             this.tmsCHMS.Name = "tmsCHMS";
             this.tmsCHMS.Size = new System.Drawing.Size(1016, 25);
             this.tmsCHMS.TabIndex = 0;
+            // 
+            // 设备管理ToolStripMenuItem
+            // 
+            this.设备管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.设备参数ToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.下载考勤ToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.下载员工信息ToolStripMenuItem,
+            this.上传员工信息ToolStripMenuItem});
+            this.设备管理ToolStripMenuItem.Name = "设备管理ToolStripMenuItem";
+            this.设备管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.设备管理ToolStripMenuItem.Text = "设备管理";
+            // 
+            // 设备参数ToolStripMenuItem
+            // 
+            this.设备参数ToolStripMenuItem.Name = "设备参数ToolStripMenuItem";
+            this.设备参数ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.设备参数ToolStripMenuItem.Text = "设备参数";
+            this.设备参数ToolStripMenuItem.Click += new System.EventHandler(this.设备参数ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 下载考勤ToolStripMenuItem
+            // 
+            this.下载考勤ToolStripMenuItem.Name = "下载考勤ToolStripMenuItem";
+            this.下载考勤ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.下载考勤ToolStripMenuItem.Text = "下载考勤";
+            this.下载考勤ToolStripMenuItem.Click += new System.EventHandler(this.下载考勤ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 下载员工信息ToolStripMenuItem
+            // 
+            this.下载员工信息ToolStripMenuItem.Name = "下载员工信息ToolStripMenuItem";
+            this.下载员工信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.下载员工信息ToolStripMenuItem.Text = "下载员工信息";
+            this.下载员工信息ToolStripMenuItem.Click += new System.EventHandler(this.下载员工信息ToolStripMenuItem_Click);
+            // 
+            // 上传员工信息ToolStripMenuItem
+            // 
+            this.上传员工信息ToolStripMenuItem.Name = "上传员工信息ToolStripMenuItem";
+            this.上传员工信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.上传员工信息ToolStripMenuItem.Text = "上传员工信息";
+            this.上传员工信息ToolStripMenuItem.Click += new System.EventHandler(this.上传员工信息ToolStripMenuItem_Click);
+            // 
+            // 人事管理ToolStripMenuItem
+            // 
+            this.人事管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.员工设置ToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.员工档案ToolStripMenuItem,
+            this.员工通讯录ToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.部门信息ToolStripMenuItem,
+            this.公司信息ToolStripMenuItem});
+            this.人事管理ToolStripMenuItem.Name = "人事管理ToolStripMenuItem";
+            this.人事管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.人事管理ToolStripMenuItem.Text = "人事管理";
+            // 
+            // 员工设置ToolStripMenuItem
+            // 
+            this.员工设置ToolStripMenuItem.Name = "员工设置ToolStripMenuItem";
+            this.员工设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.员工设置ToolStripMenuItem.Text = "员工设置";
+            this.员工设置ToolStripMenuItem.Click += new System.EventHandler(this.员工设置ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 员工档案ToolStripMenuItem
+            // 
+            this.员工档案ToolStripMenuItem.Name = "员工档案ToolStripMenuItem";
+            this.员工档案ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.员工档案ToolStripMenuItem.Text = "员工档案";
+            this.员工档案ToolStripMenuItem.Click += new System.EventHandler(this.员工档案ToolStripMenuItem_Click);
+            // 
+            // 员工通讯录ToolStripMenuItem
+            // 
+            this.员工通讯录ToolStripMenuItem.Name = "员工通讯录ToolStripMenuItem";
+            this.员工通讯录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.员工通讯录ToolStripMenuItem.Text = "员工通讯录";
+            this.员工通讯录ToolStripMenuItem.Click += new System.EventHandler(this.员工通讯录ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 部门信息ToolStripMenuItem
+            // 
+            this.部门信息ToolStripMenuItem.Name = "部门信息ToolStripMenuItem";
+            this.部门信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.部门信息ToolStripMenuItem.Text = "部门信息";
+            this.部门信息ToolStripMenuItem.Click += new System.EventHandler(this.部门信息ToolStripMenuItem_Click);
+            // 
+            // 公司信息ToolStripMenuItem
+            // 
+            this.公司信息ToolStripMenuItem.Name = "公司信息ToolStripMenuItem";
+            this.公司信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.公司信息ToolStripMenuItem.Text = "公司信息";
+            this.公司信息ToolStripMenuItem.Click += new System.EventHandler(this.公司信息ToolStripMenuItem_Click);
+            // 
+            // 考勤管理ToolStripMenuItem
+            // 
+            this.考勤管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.原始考勤ToolStripMenuItem,
+            this.考勤异常ToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.请假登记ToolStripMenuItem,
+            this.请假统计ToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.考勤日报ToolStripMenuItem,
+            this.考勤月报ToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.假期设置ToolStripMenuItem,
+            this.法定假日ToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.人员排班ToolStripMenuItem,
+            this.排班查询ToolStripMenuItem,
+            this.toolStripSeparator9,
+            this.时段设置ToolStripMenuItem,
+            this.班次设置ToolStripMenuItem});
+            this.考勤管理ToolStripMenuItem.Name = "考勤管理ToolStripMenuItem";
+            this.考勤管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.考勤管理ToolStripMenuItem.Text = "考勤管理";
+            // 
+            // 原始考勤ToolStripMenuItem
+            // 
+            this.原始考勤ToolStripMenuItem.Name = "原始考勤ToolStripMenuItem";
+            this.原始考勤ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.原始考勤ToolStripMenuItem.Text = "原始考勤";
+            // 
+            // 考勤异常ToolStripMenuItem
+            // 
+            this.考勤异常ToolStripMenuItem.Name = "考勤异常ToolStripMenuItem";
+            this.考勤异常ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.考勤异常ToolStripMenuItem.Text = "考勤异常";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 请假登记ToolStripMenuItem
+            // 
+            this.请假登记ToolStripMenuItem.Name = "请假登记ToolStripMenuItem";
+            this.请假登记ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.请假登记ToolStripMenuItem.Text = "请假登记";
+            // 
+            // 请假统计ToolStripMenuItem
+            // 
+            this.请假统计ToolStripMenuItem.Name = "请假统计ToolStripMenuItem";
+            this.请假统计ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.请假统计ToolStripMenuItem.Text = "请假统计";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 考勤日报ToolStripMenuItem
+            // 
+            this.考勤日报ToolStripMenuItem.Name = "考勤日报ToolStripMenuItem";
+            this.考勤日报ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.考勤日报ToolStripMenuItem.Text = "考勤日报";
+            // 
+            // 考勤月报ToolStripMenuItem
+            // 
+            this.考勤月报ToolStripMenuItem.Name = "考勤月报ToolStripMenuItem";
+            this.考勤月报ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.考勤月报ToolStripMenuItem.Text = "考勤月报";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 假期设置ToolStripMenuItem
+            // 
+            this.假期设置ToolStripMenuItem.Name = "假期设置ToolStripMenuItem";
+            this.假期设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.假期设置ToolStripMenuItem.Text = "假期设置";
+            // 
+            // 法定假日ToolStripMenuItem
+            // 
+            this.法定假日ToolStripMenuItem.Name = "法定假日ToolStripMenuItem";
+            this.法定假日ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.法定假日ToolStripMenuItem.Text = "法定假日";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 人员排班ToolStripMenuItem
+            // 
+            this.人员排班ToolStripMenuItem.Name = "人员排班ToolStripMenuItem";
+            this.人员排班ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.人员排班ToolStripMenuItem.Text = "人员排班";
+            // 
+            // 排班查询ToolStripMenuItem
+            // 
+            this.排班查询ToolStripMenuItem.Name = "排班查询ToolStripMenuItem";
+            this.排班查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.排班查询ToolStripMenuItem.Text = "排班查询";
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 时段设置ToolStripMenuItem
+            // 
+            this.时段设置ToolStripMenuItem.Name = "时段设置ToolStripMenuItem";
+            this.时段设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.时段设置ToolStripMenuItem.Text = "时段设置";
+            // 
+            // 班次设置ToolStripMenuItem
+            // 
+            this.班次设置ToolStripMenuItem.Name = "班次设置ToolStripMenuItem";
+            this.班次设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.班次设置ToolStripMenuItem.Text = "班次设置";
+            // 
+            // 常用工具ToolStripMenuItem
+            // 
+            this.常用工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.计算器ToolStripMenuItem,
+            this.记事本ToolStripMenuItem,
+            this.画图ToolStripMenuItem,
+            this.数据同步ToolStripMenuItem});
+            this.常用工具ToolStripMenuItem.Name = "常用工具ToolStripMenuItem";
+            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.常用工具ToolStripMenuItem.Text = "常用工具";
+            // 
+            // 计算器ToolStripMenuItem
+            // 
+            this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
+            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.计算器ToolStripMenuItem.Text = "计算器";
+            // 
+            // 记事本ToolStripMenuItem
+            // 
+            this.记事本ToolStripMenuItem.Name = "记事本ToolStripMenuItem";
+            this.记事本ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.记事本ToolStripMenuItem.Text = "记事本";
+            // 
+            // 画图ToolStripMenuItem
+            // 
+            this.画图ToolStripMenuItem.Name = "画图ToolStripMenuItem";
+            this.画图ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.画图ToolStripMenuItem.Text = "画图";
+            // 
+            // 数据同步ToolStripMenuItem
+            // 
+            this.数据同步ToolStripMenuItem.Name = "数据同步ToolStripMenuItem";
+            this.数据同步ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据同步ToolStripMenuItem.Text = "数据同步";
+            // 
+            // 退出系统ToolStripMenuItem
+            // 
+            this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.退出系统ToolStripMenuItem.Text = "退出系统";
             // 
             // statusStrip1
             // 
@@ -188,270 +460,7 @@
             this.timCurrent.Interval = 1000;
             this.timCurrent.Tick += new System.EventHandler(this.timCurrent_Tick);
             // 
-            // 设备管理ToolStripMenuItem
-            // 
-            this.设备管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.设备参数ToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.下载考勤ToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.下载员工信息ToolStripMenuItem,
-            this.上传员工信息ToolStripMenuItem});
-            this.设备管理ToolStripMenuItem.Name = "设备管理ToolStripMenuItem";
-            this.设备管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.设备管理ToolStripMenuItem.Text = "设备管理";
-            // 
-            // 下载考勤ToolStripMenuItem
-            // 
-            this.下载考勤ToolStripMenuItem.Name = "下载考勤ToolStripMenuItem";
-            this.下载考勤ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.下载考勤ToolStripMenuItem.Text = "下载考勤";
-            // 
-            // 下载员工信息ToolStripMenuItem
-            // 
-            this.下载员工信息ToolStripMenuItem.Name = "下载员工信息ToolStripMenuItem";
-            this.下载员工信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.下载员工信息ToolStripMenuItem.Text = "下载员工信息";
-            // 
-            // 上传员工信息ToolStripMenuItem
-            // 
-            this.上传员工信息ToolStripMenuItem.Name = "上传员工信息ToolStripMenuItem";
-            this.上传员工信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.上传员工信息ToolStripMenuItem.Text = "上传员工信息";
-            // 
-            // 设备参数ToolStripMenuItem
-            // 
-            this.设备参数ToolStripMenuItem.Name = "设备参数ToolStripMenuItem";
-            this.设备参数ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.设备参数ToolStripMenuItem.Text = "设备参数";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // 人事管理ToolStripMenuItem
-            // 
-            this.人事管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.员工设置ToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.员工档案ToolStripMenuItem,
-            this.员工通讯录ToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.部门信息ToolStripMenuItem,
-            this.公司信息ToolStripMenuItem});
-            this.人事管理ToolStripMenuItem.Name = "人事管理ToolStripMenuItem";
-            this.人事管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.人事管理ToolStripMenuItem.Text = "人事管理";
-            // 
-            // 员工设置ToolStripMenuItem
-            // 
-            this.员工设置ToolStripMenuItem.Name = "员工设置ToolStripMenuItem";
-            this.员工设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.员工设置ToolStripMenuItem.Text = "员工设置";
-            // 
-            // 员工档案ToolStripMenuItem
-            // 
-            this.员工档案ToolStripMenuItem.Name = "员工档案ToolStripMenuItem";
-            this.员工档案ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.员工档案ToolStripMenuItem.Text = "员工档案";
-            // 
-            // 员工通讯录ToolStripMenuItem
-            // 
-            this.员工通讯录ToolStripMenuItem.Name = "员工通讯录ToolStripMenuItem";
-            this.员工通讯录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.员工通讯录ToolStripMenuItem.Text = "员工通讯录";
-            // 
-            // 部门信息ToolStripMenuItem
-            // 
-            this.部门信息ToolStripMenuItem.Name = "部门信息ToolStripMenuItem";
-            this.部门信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.部门信息ToolStripMenuItem.Text = "部门信息";
-            // 
-            // 公司信息ToolStripMenuItem
-            // 
-            this.公司信息ToolStripMenuItem.Name = "公司信息ToolStripMenuItem";
-            this.公司信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.公司信息ToolStripMenuItem.Text = "公司信息";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
-            // 
-            // 考勤管理ToolStripMenuItem
-            // 
-            this.考勤管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.原始考勤ToolStripMenuItem,
-            this.考勤异常ToolStripMenuItem,
-            this.toolStripSeparator8,
-            this.请假登记ToolStripMenuItem,
-            this.请假统计ToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.考勤日报ToolStripMenuItem,
-            this.考勤月报ToolStripMenuItem,
-            this.toolStripSeparator7,
-            this.假期设置ToolStripMenuItem,
-            this.法定假日ToolStripMenuItem,
-            this.toolStripSeparator6,
-            this.人员排班ToolStripMenuItem,
-            this.排班查询ToolStripMenuItem,
-            this.toolStripSeparator9,
-            this.时段设置ToolStripMenuItem,
-            this.班次设置ToolStripMenuItem});
-            this.考勤管理ToolStripMenuItem.Name = "考勤管理ToolStripMenuItem";
-            this.考勤管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.考勤管理ToolStripMenuItem.Text = "考勤管理";
-            // 
-            // 时段设置ToolStripMenuItem
-            // 
-            this.时段设置ToolStripMenuItem.Name = "时段设置ToolStripMenuItem";
-            this.时段设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.时段设置ToolStripMenuItem.Text = "时段设置";
-            // 
-            // 班次设置ToolStripMenuItem
-            // 
-            this.班次设置ToolStripMenuItem.Name = "班次设置ToolStripMenuItem";
-            this.班次设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.班次设置ToolStripMenuItem.Text = "班次设置";
-            // 
-            // 人员排班ToolStripMenuItem
-            // 
-            this.人员排班ToolStripMenuItem.Name = "人员排班ToolStripMenuItem";
-            this.人员排班ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.人员排班ToolStripMenuItem.Text = "人员排班";
-            // 
-            // 排班查询ToolStripMenuItem
-            // 
-            this.排班查询ToolStripMenuItem.Name = "排班查询ToolStripMenuItem";
-            this.排班查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.排班查询ToolStripMenuItem.Text = "排班查询";
-            // 
-            // 假期设置ToolStripMenuItem
-            // 
-            this.假期设置ToolStripMenuItem.Name = "假期设置ToolStripMenuItem";
-            this.假期设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.假期设置ToolStripMenuItem.Text = "假期设置";
-            // 
-            // 法定假日ToolStripMenuItem
-            // 
-            this.法定假日ToolStripMenuItem.Name = "法定假日ToolStripMenuItem";
-            this.法定假日ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.法定假日ToolStripMenuItem.Text = "法定假日";
-            // 
-            // 原始考勤ToolStripMenuItem
-            // 
-            this.原始考勤ToolStripMenuItem.Name = "原始考勤ToolStripMenuItem";
-            this.原始考勤ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.原始考勤ToolStripMenuItem.Text = "原始考勤";
-            // 
-            // 考勤异常ToolStripMenuItem
-            // 
-            this.考勤异常ToolStripMenuItem.Name = "考勤异常ToolStripMenuItem";
-            this.考勤异常ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.考勤异常ToolStripMenuItem.Text = "考勤异常";
-            // 
-            // 请假登记ToolStripMenuItem
-            // 
-            this.请假登记ToolStripMenuItem.Name = "请假登记ToolStripMenuItem";
-            this.请假登记ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.请假登记ToolStripMenuItem.Text = "请假登记";
-            // 
-            // 请假统计ToolStripMenuItem
-            // 
-            this.请假统计ToolStripMenuItem.Name = "请假统计ToolStripMenuItem";
-            this.请假统计ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.请假统计ToolStripMenuItem.Text = "请假统计";
-            // 
-            // 考勤日报ToolStripMenuItem
-            // 
-            this.考勤日报ToolStripMenuItem.Name = "考勤日报ToolStripMenuItem";
-            this.考勤日报ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.考勤日报ToolStripMenuItem.Text = "考勤日报";
-            // 
-            // 考勤月报ToolStripMenuItem
-            // 
-            this.考勤月报ToolStripMenuItem.Name = "考勤月报ToolStripMenuItem";
-            this.考勤月报ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.考勤月报ToolStripMenuItem.Text = "考勤月报";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
-            // 
-            // 常用工具ToolStripMenuItem
-            // 
-            this.常用工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.计算器ToolStripMenuItem,
-            this.记事本ToolStripMenuItem,
-            this.画图ToolStripMenuItem,
-            this.数据同步ToolStripMenuItem});
-            this.常用工具ToolStripMenuItem.Name = "常用工具ToolStripMenuItem";
-            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.常用工具ToolStripMenuItem.Text = "常用工具";
-            // 
-            // 退出系统ToolStripMenuItem
-            // 
-            this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.退出系统ToolStripMenuItem.Text = "退出系统";
-            // 
-            // 计算器ToolStripMenuItem
-            // 
-            this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
-            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.计算器ToolStripMenuItem.Text = "计算器";
-            // 
-            // 记事本ToolStripMenuItem
-            // 
-            this.记事本ToolStripMenuItem.Name = "记事本ToolStripMenuItem";
-            this.记事本ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.记事本ToolStripMenuItem.Text = "记事本";
-            // 
-            // 画图ToolStripMenuItem
-            // 
-            this.画图ToolStripMenuItem.Name = "画图ToolStripMenuItem";
-            this.画图ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.画图ToolStripMenuItem.Text = "画图";
-            // 
-            // 数据同步ToolStripMenuItem
-            // 
-            this.数据同步ToolStripMenuItem.Name = "数据同步ToolStripMenuItem";
-            this.数据同步ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.数据同步ToolStripMenuItem.Text = "数据同步";
-            // 
-            // frmMain
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -461,7 +470,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tmsCHMS);
             this.MainMenuStrip = this.tmsCHMS;
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "人事考勤管理系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
