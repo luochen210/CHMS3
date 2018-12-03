@@ -502,7 +502,6 @@
     <None Include="Resources\主界面.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\DataSources\Model.Machines.Datasource" />
     <None Include="Resources\folder.gif" />
   </ItemGroup>
   <ItemGroup>
