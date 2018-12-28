@@ -52,9 +52,9 @@
     <Compile Include="SqlProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Framework\Framework.csproj">
+    <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{2D693169-39F8-4601-AA1C-13B0B5F3F35F}</Project>
-      <Name>Framework</Name>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

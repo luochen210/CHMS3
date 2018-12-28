@@ -73,16 +73,15 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssCurrentName = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssCurrentTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tslUserInfo = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTest = new System.Windows.Forms.Button();
             this.timCurrent = new System.Windows.Forms.Timer(this.components);
             this.tmsCHMS.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmsCHMS
@@ -95,7 +94,7 @@
             this.退出系统ToolStripMenuItem});
             this.tmsCHMS.Location = new System.Drawing.Point(0, 0);
             this.tmsCHMS.Name = "tmsCHMS";
-            this.tmsCHMS.Size = new System.Drawing.Size(1016, 25);
+            this.tmsCHMS.Size = new System.Drawing.Size(1008, 25);
             this.tmsCHMS.TabIndex = 0;
             // 
             // 设备管理ToolStripMenuItem
@@ -235,98 +234,100 @@
             // 原始考勤ToolStripMenuItem
             // 
             this.原始考勤ToolStripMenuItem.Name = "原始考勤ToolStripMenuItem";
-            this.原始考勤ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.原始考勤ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.原始考勤ToolStripMenuItem.Text = "原始考勤";
             // 
             // 考勤异常ToolStripMenuItem
             // 
             this.考勤异常ToolStripMenuItem.Name = "考勤异常ToolStripMenuItem";
-            this.考勤异常ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.考勤异常ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.考勤异常ToolStripMenuItem.Text = "考勤异常";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(121, 6);
             // 
             // 请假登记ToolStripMenuItem
             // 
             this.请假登记ToolStripMenuItem.Name = "请假登记ToolStripMenuItem";
-            this.请假登记ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.请假登记ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.请假登记ToolStripMenuItem.Text = "请假登记";
             // 
             // 请假统计ToolStripMenuItem
             // 
             this.请假统计ToolStripMenuItem.Name = "请假统计ToolStripMenuItem";
-            this.请假统计ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.请假统计ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.请假统计ToolStripMenuItem.Text = "请假统计";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(121, 6);
             // 
             // 考勤日报ToolStripMenuItem
             // 
             this.考勤日报ToolStripMenuItem.Name = "考勤日报ToolStripMenuItem";
-            this.考勤日报ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.考勤日报ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.考勤日报ToolStripMenuItem.Text = "考勤日报";
+            this.考勤日报ToolStripMenuItem.Click += new System.EventHandler(this.考勤日报ToolStripMenuItem_Click);
             // 
             // 考勤月报ToolStripMenuItem
             // 
             this.考勤月报ToolStripMenuItem.Name = "考勤月报ToolStripMenuItem";
-            this.考勤月报ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.考勤月报ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.考勤月报ToolStripMenuItem.Text = "考勤月报";
+            this.考勤月报ToolStripMenuItem.Click += new System.EventHandler(this.考勤月报ToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(121, 6);
             // 
             // 假期设置ToolStripMenuItem
             // 
             this.假期设置ToolStripMenuItem.Name = "假期设置ToolStripMenuItem";
-            this.假期设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.假期设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.假期设置ToolStripMenuItem.Text = "假期设置";
             // 
             // 法定假日ToolStripMenuItem
             // 
             this.法定假日ToolStripMenuItem.Name = "法定假日ToolStripMenuItem";
-            this.法定假日ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.法定假日ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.法定假日ToolStripMenuItem.Text = "法定假日";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(121, 6);
             // 
             // 人员排班ToolStripMenuItem
             // 
             this.人员排班ToolStripMenuItem.Name = "人员排班ToolStripMenuItem";
-            this.人员排班ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.人员排班ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.人员排班ToolStripMenuItem.Text = "人员排班";
             // 
             // 排班查询ToolStripMenuItem
             // 
             this.排班查询ToolStripMenuItem.Name = "排班查询ToolStripMenuItem";
-            this.排班查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.排班查询ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.排班查询ToolStripMenuItem.Text = "排班查询";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(121, 6);
             // 
             // 时段设置ToolStripMenuItem
             // 
             this.时段设置ToolStripMenuItem.Name = "时段设置ToolStripMenuItem";
-            this.时段设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.时段设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.时段设置ToolStripMenuItem.Text = "时段设置";
             // 
             // 班次设置ToolStripMenuItem
             // 
             this.班次设置ToolStripMenuItem.Name = "班次设置ToolStripMenuItem";
-            this.班次设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.班次设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.班次设置ToolStripMenuItem.Text = "班次设置";
             // 
             // 常用工具ToolStripMenuItem
@@ -376,9 +377,9 @@
             this.toolStripStatusLabel1,
             this.tssCurrentName,
             this.tssCurrentTime});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 708);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 703);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1016, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -386,7 +387,7 @@
             // 
             this.toolStripStatusLabel1.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(333, 21);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(331, 21);
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "欢迎使用人事管理系统";
             this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -394,7 +395,7 @@
             // tssCurrentName
             // 
             this.tssCurrentName.Name = "tssCurrentName";
-            this.tssCurrentName.Size = new System.Drawing.Size(333, 21);
+            this.tssCurrentName.Size = new System.Drawing.Size(331, 21);
             this.tssCurrentName.Spring = true;
             this.tssCurrentName.Text = "当前用户|Null";
             // 
@@ -402,29 +403,10 @@
             // 
             this.tssCurrentTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.tssCurrentTime.Name = "tssCurrentTime";
-            this.tssCurrentTime.Size = new System.Drawing.Size(333, 21);
+            this.tssCurrentTime.Size = new System.Drawing.Size(331, 21);
             this.tssCurrentTime.Spring = true;
             this.tssCurrentTime.Text = "当前时间|2010-10-10 20:57";
             this.tssCurrentTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslUserInfo});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1016, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tslUserInfo
-            // 
-            this.tslUserInfo.Image = global::CHMS.Properties.Resources._01;
-            this.tslUserInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tslUserInfo.Name = "tslUserInfo";
-            this.tslUserInfo.Size = new System.Drawing.Size(100, 22);
-            this.tslUserInfo.Text = "人事档案浏览";
-            this.tslUserInfo.Click += new System.EventHandler(this.tslUserInfo_Click);
             // 
             // panel1
             // 
@@ -432,9 +414,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 658);
+            this.panel1.Size = new System.Drawing.Size(1008, 678);
             this.panel1.TabIndex = 3;
             // 
             // panel3
@@ -444,16 +426,27 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(140, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(876, 658);
+            this.panel3.Size = new System.Drawing.Size(868, 678);
             this.panel3.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnTest);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 658);
+            this.panel2.Size = new System.Drawing.Size(140, 678);
             this.panel2.TabIndex = 0;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(29, 17);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 0;
+            this.btnTest.Text = "btnTest";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // timCurrent
             // 
@@ -464,25 +457,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 734);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tmsCHMS);
             this.MainMenuStrip = this.tmsCHMS;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "人事考勤管理系统";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.tmsCHMS.ResumeLayout(false);
             this.tmsCHMS.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,14 +483,12 @@
         private System.Windows.Forms.MenuStrip tmsCHMS;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tssCurrentName;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripStatusLabel tssCurrentTime;
         private System.Windows.Forms.Timer timCurrent;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripButton tslUserInfo;
         private System.Windows.Forms.ToolStripMenuItem 设备管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设备参数ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -540,6 +528,7 @@
         private System.Windows.Forms.ToolStripMenuItem 画图ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据同步ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;
+        private System.Windows.Forms.Button btnTest;
     }
 }
 

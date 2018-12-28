@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 
-namespace Framework
+namespace DAL
 {
     /// <summary>
     /// 常用是转换函数

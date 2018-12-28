@@ -9,8 +9,9 @@ using System.Diagnostics;
 using System.IO;
 using BLL;
 using System.Timers;
-using Framework;
+using DAL;
 using System.Data.SqlClient;
+using Model;
 
 namespace CHMS
 {
@@ -27,295 +28,14 @@ namespace CHMS
         public zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();
         private bool bIsConnected = false;//the boolean value identifies whether the device is connected
         private int iMachineNumber = 1;//the serial number of the device.After connecting the device ,this value will be changed.
-
-        //#region TopMenu
-        ///// <summary>
-        ///// 动态创建菜单
-        ///// </summary>
-        ///// <param name="FilePath">菜单XML文件的路径</param>
-        //private void CreateMenu()
-        //{
-        //    //从XML中读取数据。数据结构后面详细讲一下。
-        //    if (!File.Exists(Application.StartupPath + @"\Menu.xml"))
-        //    {
-        //        MessageBox.Show("配置文件不存在");
-        //        return;
-        //    }
-        //    DataSet ds = new DataSet();
-        //    ds.ReadXml(Application.StartupPath + @"\Menu.xml");
-        //    DataView dv = ds.Tables[0].DefaultView;
-        //    //通过DataView来过滤数据首先得到最顶层的菜单
-        //    dv.RowFilter = "ParentItemID=0";
-        //    for (int i = 0; i < dv.Count; i++)
-        //    {
-        //        //创建一个菜单项
-        //        ToolStripMenuItem topMenu = new ToolStripMenuItem();
-        //        //给菜单赋Text值。也就是在界面上看到的值。
-        //        topMenu.Text = dv[i]["Text"].ToString();
-        //        ///
-        //        /// 添加退出事件
-        //        /// 
-        //        if ("Exit".Equals(dv[i]["FormName"].ToString()))
-        //        {
-        //            topMenu.Click += new EventHandler(topMenu_Click);
-        //        }
-        //        //如果是有下级菜单则通过CreateSubMenu方法来创建下级菜单
-        //        if (Convert.ToInt16(dv[i]["IsModule"]) == 1)
-        //        {
-        //            //以ref的方式将顶层菜单传递参数，因为他可以在赋值后再回传。－－也许还有更好的方法^_^.
-        //            CreateSubMenu(ref topMenu, Convert.ToInt32(dv[i]["ItemID"]), ds.Tables[0]);
-        //        }
-        //        //显示应用程序中已打开的 MDI 子窗体列表的菜单项
-        //        tmsCHMS.MdiWindowListItem = topMenu;
-        //        //将递归附加好的菜单加到菜单根项上。
-        //        tmsCHMS.Items.Add(topMenu);
-        //    }
-        //}
-        //#region 创建子菜单
-        ///// <summary>
-        ///// 创建子菜单
-        ///// </summary>
-        ///// <param name="topMenu">父菜单项</param>
-        ///// <param name="ItemID">父菜单的ID</param>
-        ///// <param name="dt">所有菜单数据集</param>
-        //private void CreateSubMenu(ref ToolStripMenuItem topMenu, int ItemID, DataTable dt)
-        //{
-        //    DataView dv = new DataView(dt);
-        //    //过滤出当前父菜单下在所有子菜单数据(仅为下一层的)
-        //    dv.RowFilter = "ParentItemID=" + ItemID.ToString();
-        //    for (int i = 0; i < dv.Count; i++)
-        //    {
-        //        //创建子菜单项
-        //        string strFormName = dv[i]["FormName"].ToString();
-        //        string strText = dv[i]["Text"].ToString();
-        //        ToolStripMenuItem subMenu = new ToolStripMenuItem();
-        //        subMenu.Text = dv[i]["Text"].ToString();
-        //        if ("Calc".Equals(strFormName))
-        //        {
-        //            subMenu.Tag = "Calc";
-        //            subMenu.Click += new EventHandler(OtherTools_Click);
-        //        }
-        //        else if ("Notepad".Equals(strFormName))
-        //        {
-        //            subMenu.Tag = "Notepad";
-        //            subMenu.Click += new EventHandler(OtherTools_Click);
-        //        }
-        //        else if ("MsPaint".Equals(strFormName))
-        //        {
-        //            subMenu.Tag = "MsPaint";
-        //            subMenu.Click += new EventHandler(OtherTools_Click);
-        //        }
-        //        else if ("DBBack".Equals(strFormName))
-        //        {
-        //            subMenu.Tag = "DBBack";
-        //            subMenu.Click += new EventHandler(OtherTools_Click);
-        //        }
-        //        else
-        //        {
-        //            if (strFormName != "")
-        //            {
-        //                //扩展属性可以加任何想要的值。这里用formName属性来加载窗体。                   
-        //                //验证此操作员是否具有此菜单的操作权限
-        //                if (new Privilege().Validate(Parameter.CurrentUser.UserId, strFormName))
-        //                {
-        //                    //给没有子菜单的菜单项加事件。
-        //                    subMenu.Tag = strFormName;
-        //                    subMenu.Text = strText;
-        //                    subMenu.Click += new EventHandler(subMenu_Click);
-        //                }
-        //                else
-        //                {
-        //                    subMenu.Enabled = false;
-        //                }
-        //            }
-        //        }
-        //        //将菜单加到顶层菜单下。
-        //        topMenu.DropDownItems.Add(subMenu);
-        //    }
-        //}
-        //#endregion
-
-        ///// <summary>
-        ///// 菜单单击事件
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //void subMenu_Click(object sender, EventArgs e)
-        //{
-        //    //tag属性在这里有用到。       
-        //    ToolStripMenuItem tim = (ToolStripMenuItem)sender;
-        //    Type t = Type.GetType(tim.Tag.ToString());
-        //    Form frmCurrent = (Form)System.Activator.CreateInstance(t);
-        //    frmCurrent.StartPosition = FormStartPosition.CenterScreen;
-        //    frmCurrent.Size = new Size(new Point(800, 600));
-        //    frmCurrent.Show();
-
-        //}
-        ////其它工具菜单事件的注册方法
-        //private void OtherTools_Click(object sender, EventArgs e)
-        //{
-        //    switch (((ToolStripMenuItem)(sender)).Tag.ToString())
-        //    {
-        //        case "Calc":   //计算器
-        //            {
-        //                System.Diagnostics.Process.Start("Calc.exe");
-        //                break;
-        //            }
-        //        case "Notepad": //记事本
-        //            {
-        //                System.Diagnostics.Process.Start("Notepad.exe");
-        //                break;
-        //            }
-        //        case "MsPaint": //画图
-        //            {
-        //                System.Diagnostics.Process.Start("MsPaint.exe");
-        //                break;
-        //            }
-        //        case "DBBack"://数据库同步
-        //            {
-        //                //备份
-        //                string FileBackupPath = AppSettings.GetValue("BackupPath");
-        //                if (File.Exists(FileBackupPath+"back.bak"))
-        //                {
-        //                    File.Delete(FileBackupPath+"back.bak");
-        //                }
-        //                DataBaseControl DBC = new DataBaseControl();
-        //                DBC.ConnectionString = AppSettings.GetValue("ConnectionString");
-        //                DBC.DataBaseName = "CHMS";
-        //                DBC.DataBaseOfBackupName = "back.bak";
-        //                DBC.DataBaseOfBackupPath = FileBackupPath;
-        //                if (DBC.BackupDataBase())
-        //                {
-
-        //                    DBC = new DataBaseControl();
-        //                    DBC.ConnectionString = AppSettings.GetValue("ConnectionString");
-        //                    DBC.DataBaseName = "CHMST";
-        //                    DBC.DataBaseOfBackupName = "back.bak";
-        //                    DBC.DataBaseOfBackupPath = FileBackupPath;
-        //                    if (DBC.ReplaceDataBase())
-        //                    {
-        //                        MessageBox.Show("数据库同步成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
-        //                    }
-        //                    else
-        //                    {
-        //                        MessageBox.Show("数据库同步失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show("数据库连接备份失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
-        //                }
-        //                break;
-        //            }
-        //    }
-        //}
-        ///// <summary>
-        ///// 退出菜单单击事件
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //void topMenu_Click(object sender, EventArgs e)
-        //{
-        //    if (MessageBox.Show("您确实要退出系统吗？", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-        //    {
-        //        this.Dispose();
-        //        Application.Exit();
-        //        Process.GetCurrentProcess().Dispose();
-        //        Process.GetCurrentProcess().Kill();
-        //        GC.Collect();
-
-        //    }
-        //}
-        //#endregion
-
-        //#region LeftMenu
-        //private void CreateLeftMenu()
-        //{
-        //    if (!File.Exists(Application.StartupPath + @"\Menu.xml"))
-        //    {
-        //        MessageBox.Show("配置文件不存在");
-        //        return;
-        //    }
-        //    DataSet ds = new DataSet();
-        //    ds.ReadXml(Application.StartupPath + @"\Menu.xml");
-        //    DataView dv = ds.Tables[0].DefaultView;
-        //    //通过DataView来过滤数据首先得到最顶层的菜单
-        //    dv.RowFilter = "ParentItemID=0";
-        //    for (int i = 0; i < dv.Count; i++)
-        //    {
-        //        string strItemID = dv[i]["ItemID"].ToString();
-        //        if (strItemID == "101" || strItemID == "102" || strItemID == "103")
-        //        {
-        //            XPExplorerBar.Expando leftMenu = new XPExplorerBar.Expando();
-        //            leftMenu.Size = new System.Drawing.Size(140, 28);
-        //            leftMenu.ExpandedHeight = 28;
-        //            leftMenu.Text = dv[i]["Text"].ToString();
-        //            //如果是有下级菜单则通过CreateSubMenu方法来创建下级菜单
-        //            if (Convert.ToInt16(dv[i]["IsModule"]) == 1)
-        //            {
-        //                //以ref的方式将顶层菜单传递参数，因为他可以在赋值后再回传。－－也许还有更好的方法^_^.
-        //                CreateLeftSubMenu(ref leftMenu, Convert.ToInt32(dv[i]["ItemID"]), ds.Tables[0]);
-        //            }
-        //            tkpMenu.Controls.Add(leftMenu);
-        //        }
-        //    }
-        //}
-        //private void CreateLeftSubMenu(ref XPExplorerBar.Expando leftMenu, int ItemID, DataTable dt)
-        //{
-        //    DataView dv = new DataView(dt);
-        //    //过滤出当前父菜单下在所有子菜单数据(仅为下一层的)
-        //    dv.RowFilter = "ParentItemID=" + ItemID.ToString();
-        //    leftMenu.Height += dv.Count * 20;
-        //    leftMenu.ExpandedHeight += dv.Count * 20;
-        //    for (int i = 0; i < dv.Count; i++)
-        //    {
-        //        string strFormName = dv[i]["FormName"].ToString();
-        //        string strText = dv[i]["Text"].ToString();
-        //        XPExplorerBar.TaskItem tsm = new XPExplorerBar.TaskItem();
-        //        tsm.Size = new System.Drawing.Size(140, 15);
-        //        tsm.Location = new System.Drawing.Point(3, i == 0 ? 28 : i * 20 + 28);
-        //        tsm.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-        //        tsm.Text = strText;
-        //        tsm.TextAlign = ContentAlignment.MiddleCenter;
-        //        if (strFormName != "")
-        //        {
-        //            ////扩展属性可以加任何想要的值。这里用formName属性来加载窗体。                 
-        //            ////验证此操作员是否具有此菜单的操作权限
-        //            if (new Privilege().Validate(Parameter.CurrentUser.UserId, strFormName))
-        //            {
-        //                tsm.Tag = strFormName;
-        //                tsm.Text = strText;
-        //                //给没有子菜单的菜单项加事件。
-        //                tsm.Click += new EventHandler(LeftMenu_Click);
-        //            }
-        //            else
-        //            {
-        //                tsm.Enabled = false;
-        //            }
-        //        }
-        //        leftMenu.Items.Add(tsm);
-        //    }
-        //}
-        //void LeftMenu_Click(object sender, EventArgs e)
-        //{
-        //    //tag属性在这里有用到。       
-        //    XPExplorerBar.TaskItem tsm = (XPExplorerBar.TaskItem)sender;
-        //    Type t = Type.GetType(tsm.Tag.ToString());
-        //    Form frmCurrent = (Form)System.Activator.CreateInstance(t);
-        //    frmCurrent.Text = tsm.Text;
-        //    frmCurrent.StartPosition = FormStartPosition.CenterScreen;
-        //    frmCurrent.Size = new Size(new Point(800, 600));
-        //    frmCurrent.Show();
-        //}
-        //#endregion
-
+        IList<AttLog> result = new List<AttLog>();
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.tssCurrentName.Text = "当前用户|" + Parameter.CurrentUser.UserName;
             timCurrent.Start();
             //
-            DateTime endTime = DateTime.Parse(Framework.AppSettings.GetValue("Task"));
+            DateTime endTime = DateTime.Parse(DAL.AppSettings.GetValue("Task"));
             tEvent = new Event("定时考勤记录采集", DateTime.Now, endTime);
             events.Add(tEvent);
             remainTime = tEvent.EndTime.Subtract(DateTime.Now);
@@ -328,11 +48,6 @@ namespace CHMS
                 tEvent.tEventTimer.Start();
                 tEvent.showMessage.Start();
             }
-            //
-            //Rectangle rect = new Rectangle();
-            //rect = Screen.GetWorkingArea(this);
-            //this.Width = rect.Width;
-            //this.Height = rect.Height;
         }
 
         protected override void WndProc(ref Message m)
@@ -410,47 +125,82 @@ namespace CHMS
                     //
                     foreach (Model.Machines model in Machineslist)
                     {
-
                         string IPAdd = model.IP;
                         int Port = int.Parse(model.Port);
                         bIsConnected = axCZKEM1.Connect_Net(IPAdd, Port);
+
                         if (bIsConnected == false)
                         {
                             continue;
                         }
-                        axCZKEM1.EnableDevice(iMachineNumber, false);//disable the device    
-                        string sdwEnrollNumber = "";
+                           
+                        //初始化记录变量
+                        int idwEnrollNumber = 0;
                         int idwVerifyMode = 0;
                         int idwInOutMode = 0;
-                        int idwYear = 0;
-                        int idwMonth = 0;
-                        int idwDay = 0;
-                        int idwHour = 0;
-                        int idwMinute = 0;
-                        int idwSecond = 0;
+                        string sTime = "";
+
                         int idwWorkcode = 0;
                         int idwErrorCode = 0;
+                        int iGLCount = 0;
+
+                        axCZKEM1.EnableDevice(iMachineNumber, false);//disable the device 
                         if (axCZKEM1.ReadGeneralLogData(iMachineNumber))//read all the attendance records to the memory
                         {
-                            while (axCZKEM1.SSR_GetGeneralLogData(iMachineNumber,
-                                                                   out sdwEnrollNumber,
-                                                                   out idwVerifyMode,
-                                                                   out idwInOutMode,
-                                                                   out idwYear,
-                                                                   out idwMonth,
-                                                                   out idwDay,
-                                                                   out idwHour,
-                                                                   out idwMinute,
-                                                                   out idwSecond,
-                                                                   ref idwWorkcode))//get records from the memory
+                            //创建一个名为"AttLogTable"的DataTable表
+                            DataTable AttLogTable = new DataTable();
+
+                            //设定列数据
+                            AttLogTable.Columns.Add("ClockId", typeof(int));
+                            AttLogTable.Columns.Add("MachineId", typeof(int));
+                            AttLogTable.Columns.Add("VerifyMode", typeof(int));
+                            AttLogTable.Columns.Add("InOutMode", typeof(int));
+                            AttLogTable.Columns.Add("ClockRecord", typeof(DateTime));
+                            //清空DataTable行数据
+                            AttLogTable.Rows.Clear();
+
+                            //进度条
+                            FrmProgress progressWindowForm = new FrmProgress();
+                            //开始读取
+                            while (axCZKEM1.GetGeneralLogDataStr(iMachineNumber, ref idwEnrollNumber, ref idwVerifyMode, ref idwInOutMode, ref sTime))//从内存取得记录
                             {
-                                string UserID = sdwEnrollNumber;
+                                //把记录循环写入DataTable表
+                                DataRow dr = AttLogTable.NewRow();
+                                dr[0] = idwEnrollNumber;
+                                dr[1] = iMachineNumber;
+                                dr[2] = idwVerifyMode;
+                                dr[3] = idwInOutMode;
+                                dr[4] = sTime;
+                                AttLogTable.Rows.Add(dr);
+
+                                /////////////////////////////////////////////////////////
+
+
+                                int UserId = idwEnrollNumber;
                                 string VerifyMode = idwVerifyMode.ToString();
                                 string InOutMode = idwInOutMode.ToString();
-                                string AttDate = idwYear.ToString() + "-" + idwMonth.ToString() + "-" + idwDay.ToString() + " " + idwHour.ToString() + ":" + idwMinute.ToString() + ":" + idwSecond.ToString();
+                                string AttDate = sTime;
                                 string WorkCode = idwWorkcode.ToString();
-                                string Reserved = "";
-                                BLLAttLog.AddAttLog(UserID, VerifyMode, InOutMode, AttDate, WorkCode, Reserved);
+
+                                ReturnValue rtn = BLLAttLog.AddAttLog(idwEnrollNumber, iMachineNumber, idwVerifyMode, idwInOutMode, sTime);
+
+                                AttLog objAttLog = new AttLog();
+
+                                objAttLog.SdwEnrollNumber = idwEnrollNumber;
+                                objAttLog.UserName = rtn.Reason;
+                                objAttLog.AttLogDate = sTime;
+                                objAttLog.IdwVerifyMode = idwVerifyMode;
+
+                                result.Add(objAttLog);////////////////////////////////////
+
+
+                                iGLCount++;//下载个数
+                                progressWindowForm.SetDisplayText(String.Format("第{0}条数据正在下载中..", iGLCount));
+                                progressWindowForm.StepTo(iGLCount);
+                                if (progressWindowForm.IsAborting)
+                                {
+                                    continue;
+                                }
                             }
                         }
                         else
@@ -602,18 +352,52 @@ namespace CHMS
             }
         }
 
+        public static FrmRptMonthLog objFrmRptMonthLog = null;
+        private void 考勤月报ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (objFrmRptMonthLog == null)
+            {
+                objFrmRptMonthLog = new FrmRptMonthLog();
+                objFrmRptMonthLog.Show();
+            }
+            else
+            {
+                objFrmRptMonthLog.Activate();//激活只能在最小化的时候起作用
+                objFrmRptMonthLog.WindowState = FormWindowState.Normal;
+            }
+        }
 
+        public static FrmRptDayLog objFrmRptDayLog = null;
+        private void 考勤日报ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (objFrmRptDayLog == null)
+            {
+                objFrmRptDayLog = new FrmRptDayLog();
+                objFrmRptDayLog.Show();
+            }
+            else
+            {
+                objFrmRptDayLog.Activate();//激活只能在最小化的时候起作用
+                objFrmRptDayLog.WindowState = FormWindowState.Normal;
+            }
+        }
 
-
-
-
-
+        //创建模拟数据
+        public static FrmCreateAttLog objFrmCreateAttLog = null;
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            if (objFrmCreateAttLog==null)
+            {
+                objFrmCreateAttLog = new FrmCreateAttLog();
+                objFrmCreateAttLog.Show();
+            }
+            else
+            {
+                objFrmCreateAttLog.Activate();//最小化
+                objFrmCreateAttLog.WindowState = FormWindowState.Normal;
+            }
+        }
     }
-
-
-
-
-
 
 
     /// <summary>

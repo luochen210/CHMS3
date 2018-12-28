@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Framework;
+using DAL;
 //下载源码到51aspx
 namespace CHMS
 {

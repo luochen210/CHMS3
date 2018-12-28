@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-using Framework;
+using DAL;
 //下载源码到51aspx
 namespace CHMS
 {
@@ -60,6 +60,11 @@ namespace CHMS
         private void btnColse_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmCreateAttLog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmMain.objFrmCreateAttLog = null;
         }
     }
 }

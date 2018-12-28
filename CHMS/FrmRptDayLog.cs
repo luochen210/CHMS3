@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-using Framework;
+using DAL;
 using System.Drawing.Printing;
 
 namespace CHMS
@@ -122,6 +122,11 @@ namespace CHMS
                     break;
             }
             base.WndProc(ref m);
+        }
+
+        private void FrmRptDayLog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmMain.objFrmRptDayLog = null;
         }
     }
 }

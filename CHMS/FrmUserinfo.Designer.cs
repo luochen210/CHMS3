@@ -574,16 +574,17 @@
             this.label7.TabIndex = 31;
             this.label7.Text = "*编号:";
             // 
-            // frmUserinfo
+            // FrmUserinfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 542);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "frmUserinfo";
+            this.Name = "FrmUserinfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "人员信息设置";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUserinfo_FormClosed);
             this.Load += new System.EventHandler(this.frmUserinfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

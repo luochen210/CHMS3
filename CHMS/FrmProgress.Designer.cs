@@ -46,7 +46,7 @@
             this.progressBar.Size = new System.Drawing.Size(449, 23);
             this.progressBar.TabIndex = 6;
             // 
-            // frmProgress
+            // FrmProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -56,9 +56,9 @@
             this.Controls.Add(this.progressBar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmProgress";
+            this.Name = "FrmProgress";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmProgress";
+            this.Text = "进度条";
             this.ResumeLayout(false);
 
         }

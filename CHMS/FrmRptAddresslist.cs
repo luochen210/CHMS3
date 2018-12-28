@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-using Framework;
+using DAL;
 using System.Drawing.Printing;
 
 namespace CHMS

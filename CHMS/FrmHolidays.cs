@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-using Framework;
+using DAL;
 //下载源码到51aspx
 namespace CHMS
 {

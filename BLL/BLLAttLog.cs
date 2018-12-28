@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Framework;
+using DAL;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -10,7 +10,7 @@ namespace BLL
 {
     public class BLLAttLog
     {
-        public static ReturnValue AddAttLog(string UserID, string VerifyMode, string InOutMode, string AttDate, string WorkCode, string Reserved)
+        public static ReturnValue AddAttLog(int idwEnrollNumber, int iMachineNumber, int idwVerifyMode, int idwInOutMode, string sTime)
         {
             int iReturnValue = -10;
             string strErrInfo = "No Return Info!";
@@ -23,23 +23,22 @@ namespace BLL
                 cmd.CommandText = cmdText;
                 cmd.Parameters.Add(new SqlParameter("@RETURN_VALUE", SqlDbType.Int));
                 cmd.Parameters["@RETURN_VALUE"].Direction = ParameterDirection.ReturnValue;
-                cmd.Parameters.Add(new SqlParameter("@UserID", UserID));
-                cmd.Parameters.Add(new SqlParameter("@VerifyMode", VerifyMode));
-                cmd.Parameters.Add(new SqlParameter("@InOutMode", InOutMode));
-                cmd.Parameters.Add(new SqlParameter("@AttDate", AttDate));
-                cmd.Parameters.Add(new SqlParameter("@WorkCode", WorkCode));
-                cmd.Parameters.Add(new SqlParameter("@Reserved", Reserved));
+                cmd.Parameters.Add(new SqlParameter("@ClockId", idwEnrollNumber));
+                cmd.Parameters.Add(new SqlParameter("@MachineId", iMachineNumber));
+                cmd.Parameters.Add(new SqlParameter("@VerifyMode", idwVerifyMode));
+                cmd.Parameters.Add(new SqlParameter("@InOutMode", idwInOutMode));
+                cmd.Parameters.Add(new SqlParameter("@ClockRecord", sTime));
                 cmd.Parameters.Add(new SqlParameter("@strErrInfo", SqlDbType.NVarChar, 512));
                 cmd.Parameters["@strErrInfo"].Direction = ParameterDirection.Output;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 iReturnValue = (int)cmd.Parameters["@RETURN_VALUE"].Value;
-                strErrInfo = (string)cmd.Parameters["@strErrInfo"].Value;
+                strErrInfo = cmd.Parameters["@strErrInfo"].Value.ToString();
             }
             catch (Exception ex)
             {
                 iReturnValue = -11;
-                strErrInfo = "未设置姓名";
+                strErrInfo = "未知";
                 LogManager.WriteTextLog("SQLServerDAL", "", "AddAttLog", ex.Message + ex.StackTrace);
             }
             finally
@@ -213,7 +212,7 @@ namespace BLL
             }
 
             return new ReturnValue(iReturnValue, strErrInfo);
-        }           
+        }
         public ReturnValue CreateUserAttLog(string StartDateTime, string EndDateTime, string UserInfo, int Range)
         {
             int iReturnValue = -10;

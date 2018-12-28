@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
-using Framework;
+using DAL;
 namespace BLL
 {
     public class BLLUserinfo : DataAccessBase

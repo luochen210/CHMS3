@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 
-namespace Framework
+namespace DAL
 {
    /// <summary>
     /// 配置文件类

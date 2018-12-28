@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 
-namespace Framework
+namespace DAL
 {
     /// <summary>
     /// DataTable 数据源对象转化成XML文件

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
-using Framework;
+using DAL;
 namespace CHMSDBConfig
 {
     public partial class FrmDbConfig : Form

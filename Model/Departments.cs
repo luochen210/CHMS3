@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Framework;
+using DAL;
 using System.Reflection;
 
 namespace Model

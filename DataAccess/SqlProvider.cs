@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Common;
-using Framework;
+using DAL;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Data;
@@ -469,5 +469,10 @@ namespace DataAccess
             }
             return (SqlParameter[])Parameters.ToArray(typeof(SqlParameter));
         }
+
+
+
+
+
     }
 }

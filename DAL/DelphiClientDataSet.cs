@@ -4,7 +4,7 @@ using System.Xml;
 using System.Data;
 using System.Text;
 
-namespace Framework
+namespace DAL
 {
     /// <summary>
     /// 于DelphiClientDataSet的适配对象

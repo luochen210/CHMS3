@@ -6,7 +6,7 @@ using System.Data.OleDb;
 
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Framework
+namespace DAL
 {
     /// <summary>
     /// EXEL²Ù×÷¶ÔÏó

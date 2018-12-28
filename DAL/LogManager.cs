@@ -4,7 +4,7 @@ using System.Text;
 using System.Configuration;
 using System.IO;
 
-namespace Framework
+namespace DAL
 {
     public class LogManager
     {
@@ -18,6 +18,8 @@ namespace Framework
         /// <param name="strContent">ÄÚÈÝ</param>
         public static void WriteTextLog(string strSubject, string strModule, string strMethod, string strContent)
         {
+            //string str = System.IO.Directory.GetCurrentDirectory();
+
             try
             {
                 FileStream FS = new FileStream(GetLogPath() + strSubject + "_" + DateTime.Now.ToString("yyyy_MM_dd") + ".log", FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
@@ -162,11 +164,12 @@ namespace Framework
         private static string GetLogPath()
         {
             string strLogPath = ConfigurationManager.AppSettings["LogPath"];
+            string str = System.IO.Directory.GetCurrentDirectory();
             switch (strLogPath)
             {
                 case null:
                 case "":
-                    strLogPath = @"C:\";
+                    strLogPath = str;
                     break;
             }
             return strLogPath;

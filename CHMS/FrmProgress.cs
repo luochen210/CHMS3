@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//下载源码到51aspx
+
 namespace CHMS
 {
     public partial class FrmProgress : Form
@@ -115,7 +115,7 @@ namespace CHMS
             Invoke(new IncrementInvoker(DoIncrement), new object[] { val });
         }
         /// <summary>
-        /// 跳到摸个进度
+        /// 跳到某个进度
         /// </summary>
         /// <param name="val"></param>
         public void StepTo(int val)

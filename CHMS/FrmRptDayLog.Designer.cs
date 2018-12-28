@@ -44,14 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dgvDayLog = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tvUserInfo = new System.Windows.Forms.TreeView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.fastSelect1 = new CHMS.FastSelect(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +58,14 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tvUserInfo = new System.Windows.Forms.TreeView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.fastSelect1 = new CHMS.FastSelect(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -86,7 +86,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 55);
+            this.panel1.Size = new System.Drawing.Size(1553, 55);
             this.panel1.TabIndex = 4;
             // 
             // btnClose
@@ -169,7 +169,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(755, 405);
+            this.panel2.Size = new System.Drawing.Size(1553, 489);
             this.panel2.TabIndex = 5;
             // 
             // panel4
@@ -179,7 +179,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 35);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(755, 370);
+            this.panel4.Size = new System.Drawing.Size(1553, 454);
             this.panel4.TabIndex = 1;
             // 
             // panel6
@@ -188,7 +188,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(193, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(562, 370);
+            this.panel6.Size = new System.Drawing.Size(1360, 454);
             this.panel6.TabIndex = 2;
             // 
             // dgvDayLog
@@ -215,72 +215,8 @@
             this.dgvDayLog.Name = "dgvDayLog";
             this.dgvDayLog.RowHeadersVisible = false;
             this.dgvDayLog.RowTemplate.Height = 23;
-            this.dgvDayLog.Size = new System.Drawing.Size(562, 370);
+            this.dgvDayLog.Size = new System.Drawing.Size(1360, 454);
             this.dgvDayLog.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.tvUserInfo);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(193, 370);
-            this.panel5.TabIndex = 1;
-            // 
-            // tvUserInfo
-            // 
-            this.tvUserInfo.CheckBoxes = true;
-            this.tvUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvUserInfo.Location = new System.Drawing.Point(0, 0);
-            this.tvUserInfo.Name = "tvUserInfo";
-            this.tvUserInfo.Size = new System.Drawing.Size(193, 370);
-            this.tvUserInfo.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dtEndDate);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dtStartDate);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(755, 35);
-            this.panel3.TabIndex = 0;
-            // 
-            // dtEndDate
-            // 
-            this.dtEndDate.Location = new System.Drawing.Point(288, 8);
-            this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(115, 21);
-            this.dtEndDate.TabIndex = 52;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 12);
-            this.label4.Name = "label4";
-            this.fastSelect1.SetSelectionSource(this.label4, null);
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "结束日期：";
-            // 
-            // dtStartDate
-            // 
-            this.dtStartDate.Location = new System.Drawing.Point(83, 8);
-            this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(122, 21);
-            this.dtStartDate.TabIndex = 50;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 13);
-            this.label3.Name = "label3";
-            this.fastSelect1.SetSelectionSource(this.label3, null);
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "开始日期：";
             // 
             // Column1
             // 
@@ -377,17 +313,82 @@
             this.Column17.HeaderText = "备注";
             this.Column17.Name = "Column17";
             // 
-            // frmRptDayLog
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.tvUserInfo);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(193, 454);
+            this.panel5.TabIndex = 1;
+            // 
+            // tvUserInfo
+            // 
+            this.tvUserInfo.CheckBoxes = true;
+            this.tvUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvUserInfo.Location = new System.Drawing.Point(0, 0);
+            this.tvUserInfo.Name = "tvUserInfo";
+            this.tvUserInfo.Size = new System.Drawing.Size(193, 454);
+            this.tvUserInfo.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dtEndDate);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.dtStartDate);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1553, 35);
+            this.panel3.TabIndex = 0;
+            // 
+            // dtEndDate
+            // 
+            this.dtEndDate.Location = new System.Drawing.Point(288, 8);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(115, 21);
+            this.dtEndDate.TabIndex = 52;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(217, 12);
+            this.label4.Name = "label4";
+            this.fastSelect1.SetSelectionSource(this.label4, null);
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "结束日期：";
+            // 
+            // dtStartDate
+            // 
+            this.dtStartDate.Location = new System.Drawing.Point(83, 8);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(122, 21);
+            this.dtStartDate.TabIndex = 50;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 13);
+            this.label3.Name = "label3";
+            this.fastSelect1.SetSelectionSource(this.label3, null);
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "开始日期：";
+            // 
+            // FrmRptDayLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 460);
+            this.ClientSize = new System.Drawing.Size(1553, 544);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "frmRptDayLog";
+            this.Name = "FrmRptDayLog";
             this.Text = "考勤日报统计";
-            this.Load += new System.EventHandler(this.frmRptDayLog_Load);
             this.Activated += new System.EventHandler(this.frmRptDayLog_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRptDayLog_FormClosed);
+            this.Load += new System.EventHandler(this.frmRptDayLog_Load);
             this.Leave += new System.EventHandler(this.frmRptDayLog_Leave);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -4,7 +4,7 @@ using System.Text;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-namespace Framework
+namespace DAL
 {
     public class ImageManage
     {

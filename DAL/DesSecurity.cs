@@ -4,7 +4,7 @@ using  System.IO;
 using  System.Text;
 using System.Web.Security;
 
-namespace Framework
+namespace DAL
 {
     /// <summary>
     /// 加密与解密类

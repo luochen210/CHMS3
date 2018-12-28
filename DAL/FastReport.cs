@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Data;
 
 
-namespace Framework
+namespace DAL
 {
     /// <summary>
     /// FastReportµ˜”√¿‡

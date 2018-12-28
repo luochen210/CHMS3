@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BLL;
 using System.Drawing.Printing;
-using Framework;
+using DAL;
 //下载源码到51aspx
 namespace CHMS
 {

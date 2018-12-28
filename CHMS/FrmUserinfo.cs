@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-using Framework;
+using DAL;
 
 namespace CHMS
 {
@@ -235,6 +235,11 @@ namespace CHMS
                     }
                 }
             }
+        }
+
+        private void FrmUserinfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmMain.objFrmUserinfo = null;
         }
     }
 }

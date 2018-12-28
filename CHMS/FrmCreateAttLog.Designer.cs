@@ -222,7 +222,7 @@
             this.tvUserInfo.Size = new System.Drawing.Size(289, 446);
             this.tvUserInfo.TabIndex = 2;
             // 
-            // frmCreateAttLog
+            // FrmCreateAttLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,9 +230,10 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "frmCreateAttLog";
+            this.Name = "FrmCreateAttLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "生成模拟考勤数据";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCreateAttLog_FormClosed);
             this.Load += new System.EventHandler(this.frmCreateAttLog_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

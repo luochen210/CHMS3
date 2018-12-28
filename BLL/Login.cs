@@ -5,7 +5,7 @@ using System.Text;
 using Model;
 using System.Data;
 using DataAccess;
-using Framework;
+using DAL;
 
 namespace BLL
 {
