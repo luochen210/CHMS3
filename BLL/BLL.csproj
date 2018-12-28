@@ -68,17 +68,13 @@
     <Compile Include="UserInfoDepartments.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{BF8E6790-A1DE-4F40-B0E5-9A2BE2146C5B}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{2D693169-39F8-4601-AA1C-13B0B5F3F35F}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Models\Models.csproj">
       <Project>{2974786D-470F-45CE-B5F0-237D76954298}</Project>
-      <Name>Model</Name>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

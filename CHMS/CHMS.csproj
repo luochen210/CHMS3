@@ -412,17 +412,13 @@
       <Project>{EFFCA36E-CF4E-40FF-9023-52EAD638A797}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{BF8E6790-A1DE-4F40-B0E5-9A2BE2146C5B}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{2D693169-39F8-4601-AA1C-13B0B5F3F35F}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Models\Models.csproj">
       <Project>{2974786D-470F-45CE-B5F0-237D76954298}</Project>
-      <Name>Model</Name>
+      <Name>Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\XlsReport\XlsReport.csproj">
       <Project>{4870B66B-FAB3-4AFC-80A9-F56FCE825A27}</Project>

@@ -12,12 +12,12 @@ namespace CHMS
 {
     public partial class FrmDownloadUser : Form
     {
-        private DataAccess.SqlProvider DbHelperSQL;
+        private DAL.SqlProvider DbHelperSQL;
         private BLLMachines Action;
         public FrmDownloadUser()
         {
             InitializeComponent();
-            DbHelperSQL = new DataAccess.SqlProvider();
+            DbHelperSQL = new DAL.SqlProvider();
             Action = new BLLMachines();
 
         }

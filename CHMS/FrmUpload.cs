@@ -13,12 +13,12 @@ namespace CHMS
 {
     public partial class FrmUpload : Form
     {
-        private DataAccess.SqlProvider DbHelperSQL;
+        private DAL.SqlProvider DbHelperSQL;
         private UserInfoDepartments Ation = new UserInfoDepartments();
         public FrmUpload()
         {
             InitializeComponent();
-            DbHelperSQL = new DataAccess.SqlProvider();
+            DbHelperSQL = new DAL.SqlProvider();
         }
         public zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();
         private bool bIsConnected = false;//the boolean value identifies whether the device is connected

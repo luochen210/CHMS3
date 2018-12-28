@@ -14,11 +14,11 @@ namespace CHMS
     {
         private string DoType = "Insert";
         private BLLRunNum Ation = new BLLRunNum();
-        private DataAccess.SqlProvider DbHelperSQL;
+        private DAL.SqlProvider DbHelperSQL;
         public FrmRun()
         {
             InitializeComponent();
-            DbHelperSQL = new DataAccess.SqlProvider();
+            DbHelperSQL = new DAL.SqlProvider();
         }
         private void btnColse_Click(object sender, EventArgs e)
         {

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Common;
-using DAL;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Data;
 using System.Collections;
-namespace DataAccess
+
+namespace DAL
 {
-    public class SqlProvider
+    public class SQLHelper
     {
         /// <summary>
         /// 连接对象
@@ -27,7 +27,7 @@ namespace DataAccess
         /// <summary>
         /// 构造函数
         /// </summary>
-        public SqlProvider()
+        public SQLHelper()
         {
             this.Con = new SqlConnection(AppSettings.GetConString());
         }     

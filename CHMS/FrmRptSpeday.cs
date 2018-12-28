@@ -12,11 +12,11 @@ namespace CHMS
 {
     public partial class FrmRptSpeday : Form
     {
-        private DataAccess.SqlProvider DbHelperSQL;
+        private DAL.SqlProvider DbHelperSQL;
         public FrmRptSpeday()
         {
             InitializeComponent();
-            DbHelperSQL = new DataAccess.SqlProvider();
+            DbHelperSQL = new DAL.SqlProvider();
         }
         private void frmRptSpeday_Load(object sender, EventArgs e)
         {

@@ -15,12 +15,12 @@ namespace CHMS
 {
     public partial class FrmAttLog : Form
     {
-        private DataAccess.SqlProvider DbHelperSQL;
+        private DAL.SqlProvider DbHelperSQL;
         private BLLMachines Action;
         public FrmAttLog()
         {
             InitializeComponent();
-            DbHelperSQL = new DataAccess.SqlProvider();
+            DbHelperSQL = new DAL.SqlProvider();
             Action = new BLLMachines();
         }
 
