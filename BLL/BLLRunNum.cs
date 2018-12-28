@@ -7,7 +7,7 @@ using System.Data;
 namespace BLL
 {
 
-    public class BLLRunNum : DataAccessBase
+    public class BLLRunNum : SQLHelper
     {
         public BLLRunNum()
         { }
@@ -16,7 +16,7 @@ namespace BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.RunNum model)
+        public int Add(Models.RunNum model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into RunNum(");
@@ -44,7 +44,7 @@ namespace BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public int Update(Model.RunNum model)
+        public int Update(Models.RunNum model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update RunNum set ");
@@ -91,7 +91,7 @@ namespace BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.RunNum GetModel(string RunID)
+        public Models.RunNum GetModel(string RunID)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select RunID,Name,Startdate,Enddate,Cyle,Units from RunNum ");
@@ -99,7 +99,7 @@ namespace BLL
             SqlParameter[] parameters = {
 					new SqlParameter("@RunID", SqlDbType.VarChar,50)};
             parameters[0].Value = RunID;
-            IList<Model.RunNum> result = DbHelperSQL.GetIList<Model.RunNum>(strSql.ToString(), CommandType.Text, parameters);
+            IList<Models.RunNum> result = DbHelperSQL.GetIList<Models.RunNum>(strSql.ToString(), CommandType.Text, parameters);
             if (result != null && result.Count > 0)
             {
                 return result[0];
@@ -112,7 +112,7 @@ namespace BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public IList<Model.RunNum> GetList(string strWhere)
+        public IList<Models.RunNum> GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select RunID,Name,Startdate,Enddate,Cyle,Units");
@@ -121,20 +121,20 @@ namespace BLL
             {
                 strSql.Append(strWhere);
             }
-            return DbHelperSQL.GetIList<Model.RunNum>(strSql.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<Models.RunNum>(strSql.ToString(), CommandType.Text);
         }
-        public IList<Model.RunNum> GetList()
+        public IList<Models.RunNum> GetList()
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select RunID,Name,Startdate,Enddate,Cyle,Units");
             strSql.Append(" FROM RunNum ");
-            return DbHelperSQL.GetIList<Model.RunNum>(strSql.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<Models.RunNum>(strSql.ToString(), CommandType.Text);
         }
         public int AddRunNumSchclass(string strSql)
         {
             return DbHelperSQL.ExcuteNonQuery(strSql, CommandType.Text);
         }
-        public IList<Model.RunNumSchclass> GetRunNumSchclassList(string strWhere)
+        public IList<Models.RunNumSchclass> GetRunNumSchclassList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select RunID,SchclassID ");
@@ -143,7 +143,7 @@ namespace BLL
             {
                 strSql.Append(strWhere);
             }
-            return DbHelperSQL.GetIList<Model.RunNumSchclass>(strSql.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<Models.RunNumSchclass>(strSql.ToString(), CommandType.Text);
         }
 
         public DataTable GetRunNumDataTable()

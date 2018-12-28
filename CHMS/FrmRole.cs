@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-using Model;
+using Models;
 //下载源码到51aspx
 namespace CHMS
 {
@@ -122,7 +122,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Model.Role model = this.dgvRole.CurrentRow.DataBoundItem as Model.Role;
+                    Models.Role model = this.dgvRole.CurrentRow.DataBoundItem as Models.Role;
                     if (model != null)
                     {
                         txtIdx.Text = model.Idx.ToString();

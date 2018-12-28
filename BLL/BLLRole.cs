@@ -11,14 +11,14 @@ namespace BLL
    /// <summary>
    /// 角色组操作对象
    /// </summary>
-   public class BLLRole:DataAccessBase
+   public class BLLRole:SQLHelper
    {
        /// <summary>
        /// 添加角色组
        /// </summary>
        /// <param name="model">实体对象</param>
        /// <returns>0或1</returns>
-       public int Add(Model.Role model)
+       public int Add(Models.Role model)
        {
            StringBuilder sb = new StringBuilder();
            sb.Append("INSERT INTO Role ([Idx], CName, DoUserCode, DoDateTime, Notes, RptCount,State)");
@@ -31,7 +31,7 @@ namespace BLL
        /// </summary>
        /// <param name="model">实体对象</param>
        /// <returns>0或1</returns>
-       public int Update(Model.Role model)
+       public int Update(Models.Role model)
        {
            StringBuilder sb = new StringBuilder();
            sb.Append("UPDATE Role SET CName =@CName, DoUserCode=@DoUserCode, DoDateTime=@DoDateTime, ");
@@ -52,9 +52,9 @@ namespace BLL
        /// 角色组ILIST对象
        /// </summary>
        /// <returns>角色组ILIST对象</returns>
-       public IList<Model.Role> GetRoleIlist()
+       public IList<Models.Role> GetRoleIlist()
        {
-           return DbHelperSQL.GetIList<Model.Role>("SELECT Idx, CName, DoUserCode, DoDateTime, Notes,RptCount, State FROM Role", CommandType.Text);
+           return DbHelperSQL.GetIList<Models.Role>("SELECT Idx, CName, DoUserCode, DoDateTime, Notes,RptCount, State FROM Role", CommandType.Text);
        }
        /// <summary>
        /// 获得角色组的最大编号
@@ -65,7 +65,7 @@ namespace BLL
            return DbHelperSQL.GetMaxID("Role", "Idx");
        }
 
-       public IList<Model.Module> GetModuleList(string strWhere)
+       public IList<Models.Module> GetModuleList(string strWhere)
        {
            StringBuilder strSql = new StringBuilder();
            strSql.Append("select Id,Name,Signcode,Syscode ");
@@ -74,7 +74,7 @@ namespace BLL
            {
                strSql.Append(" where " + strWhere);
            }
-           return DbHelperSQL.GetIList<Model.Module>(strSql.ToString(),CommandType.Text);
+           return DbHelperSQL.GetIList<Models.Module>(strSql.ToString(),CommandType.Text);
        }
 
        public DataTable GetFuncnoDataTable(int ModuleID)

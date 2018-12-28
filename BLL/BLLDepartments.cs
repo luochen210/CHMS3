@@ -5,10 +5,10 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using DAL;
-using Model;
+using Models;
 namespace BLL
 {
-    public class BLLDepartments : DataAccessBase
+    public class BLLDepartments : SQLHelper
     {
 
         /// <summary>

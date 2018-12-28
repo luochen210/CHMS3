@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model;
+using Models;
 using System.Data;
 using DAL;
 using DAL;
@@ -12,7 +12,7 @@ namespace BLL
     /// <summary>
     /// 用户类
     /// </summary>
-    public class Login : DataAccessBase
+    public class Login : SQLHelper
     {
         /// <summary>
         /// 用户登陆的结果

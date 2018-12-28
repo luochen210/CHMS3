@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DAL;
 using System.Reflection;
 
-namespace Model
+namespace Models
 {
     [Serializable]
     public class Module : ILoadable

@@ -281,7 +281,7 @@
             // 
             // machinesBindingSource
             // 
-            this.machinesBindingSource.DataSource = typeof(Model.Machines);
+            this.machinesBindingSource.DataSource = typeof(Models.Machines);
             // 
             // panel5
             // 

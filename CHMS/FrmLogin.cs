@@ -33,7 +33,7 @@ namespace CHMS
             }
             string UserCode = textName.Text;
             string Password = textPass.Text;
-            Model.User UserInfo = null;
+            Models.User UserInfo = null;
             switch (new Login().LoginValidate(UserCode, Password, out UserInfo))
             {
                 case Login.LoginResult.NoAdmin:

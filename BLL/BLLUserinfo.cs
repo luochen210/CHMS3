@@ -7,13 +7,13 @@ using System.Data;
 using DAL;
 namespace BLL
 {
-    public class BLLUserinfo : DataAccessBase
+    public class BLLUserinfo : SQLHelper
     {
 
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.Userinfo model)
+        public int Add(Models.Userinfo model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into Userinfo(");
@@ -78,7 +78,7 @@ namespace BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public int Update(Model.Userinfo model)
+        public int Update(Models.Userinfo model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update Userinfo set ");
@@ -183,7 +183,7 @@ namespace BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.Userinfo GetModel(string UserID)
+        public Models.Userinfo GetModel(string UserID)
         {
 
             StringBuilder strSql = new StringBuilder();
@@ -192,7 +192,7 @@ namespace BLL
             SqlParameter[] parameters = {
 					new SqlParameter("@UserID", SqlDbType.VarChar,50)};
             parameters[0].Value = UserID;
-            IList<Model.Userinfo> result = DbHelperSQL.GetIList<Model.Userinfo>(strSql.ToString(), CommandType.Text, parameters);
+            IList<Models.Userinfo> result = DbHelperSQL.GetIList<Models.Userinfo>(strSql.ToString(), CommandType.Text, parameters);
             if (result != null && result.Count > 0)
             {
                 return result[0];
@@ -205,7 +205,7 @@ namespace BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public IList<Model.Userinfo> GetUserinfoIList(string strWhere)
+        public IList<Models.Userinfo> GetUserinfoIList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select UserID,AttNumber,Ssn,Name,Gender,Title,Mobile,Birthday,Hiredday,Address,Province,City,Zip,OfficePhone,VerificationMethod,DefaultDeptid,RoleID,Att,Inlate,Outearly,Overtime,Holiday,Nationality,Password,Lunchduration,MverifyPass");
@@ -214,7 +214,7 @@ namespace BLL
             {
                 strSql.Append(" where " + strWhere);
             }
-            return DbHelperSQL.GetIList<Model.Userinfo>(strSql.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<Models.Userinfo>(strSql.ToString(), CommandType.Text);
         }
 
         public ReturnValue AddXlsUserInfo(string UserID, string Name, string DepartmentsName, string Att)

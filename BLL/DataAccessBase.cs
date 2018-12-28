@@ -6,12 +6,12 @@ using DAL;
 
 namespace BLL
 {
-    public class DataAccessBase
+    public class SQLHelper
     {
-        public SqlProvider DbHelperSQL;
-        public DataAccessBase()
+        public DAL.SQLHelper DbHelperSQL;
+        public SQLHelper()
         {
-            DbHelperSQL = new SqlProvider();
+            DbHelperSQL = new DAL.SQLHelper();
         }
     }
 }

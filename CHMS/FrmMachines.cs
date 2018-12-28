@@ -102,9 +102,9 @@ namespace CHMS
             this.Close();
         }
 
-        private Model.Machines GetMachinesModel()
+        private Models.Machines GetMachinesModel()
         {
-            Model.Machines model = new Model.Machines();
+            Models.Machines model = new Models.Machines();
             model.Idx = txtIdx.Text;
             model.MachineName = txtMachineName.Text;
             model.ConnectType = cbConnectType.Text;
@@ -133,7 +133,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Model.Machines model = dgvMachines.CurrentRow.DataBoundItem as Model.Machines;
+                    Models.Machines model = dgvMachines.CurrentRow.DataBoundItem as Models.Machines;
                     txtIdx.Text = model.Idx;
                     txtMachineName.Text = model.MachineName;
                     cbConnectType.Text = model.ConnectType;

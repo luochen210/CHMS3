@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-using DAL;
 
-namespace Model
+namespace Models
 {
     /// <summary>
     /// 实体类COMPANY 。(属性说明自动提取数据库字段的描述信息)

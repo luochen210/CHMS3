@@ -6,9 +6,9 @@ using System.Data;
 using System.Data.SqlClient;
 namespace BLL
 {
-   public class BLLAttparam:DataAccessBase
+   public class BLLAttparam:SQLHelper
     {
-        public Model.Attparam GetModel(int IDX)
+        public Models.Attparam GetModel(int IDX)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
@@ -17,7 +17,7 @@ namespace BLL
 			SqlParameter[] parameters = {
 					new SqlParameter("@IDX", SqlDbType.Int,4)};
 			parameters[0].Value = IDX;
-            IList<Model.Attparam> result = DbHelperSQL.GetIList<Model.Attparam>(strSql.ToString(), CommandType.Text);
+            IList<Models.Attparam> result = DbHelperSQL.GetIList<Models.Attparam>(strSql.ToString(), CommandType.Text);
 	
 			if(result!=null && result.Count>0)
 			{
@@ -32,7 +32,7 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public IList<Model.Attparam> GetList(string strWhere)
+		public IList<Models.Attparam> GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select IDX,ParaType,ParaName,ParaValue ");
@@ -41,7 +41,7 @@ namespace BLL
 			{
 				strSql.Append(" where "+strWhere);
 			}
-			return DbHelperSQL.GetIList<Model.Attparam>(strSql.ToString(),CommandType.Text);
+			return DbHelperSQL.GetIList<Models.Attparam>(strSql.ToString(),CommandType.Text);
 		}
     }    
 }

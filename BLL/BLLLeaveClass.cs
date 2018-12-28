@@ -7,7 +7,7 @@ using System.Data;
 
 namespace BLL
 {
-    public class BLLLeaveClass : DataAccessBase
+    public class BLLLeaveClass : SQLHelper
     {
         public BLLLeaveClass()
         { }
@@ -16,7 +16,7 @@ namespace BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.LeaveClass model)
+        public int Add(Models.LeaveClass model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into LeaveClass(");
@@ -49,7 +49,7 @@ namespace BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public int Update(Model.LeaveClass model)
+        public int Update(Models.LeaveClass model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update LeaveClass set ");
@@ -105,7 +105,7 @@ namespace BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public IList<Model.LeaveClass> GetList(string strWhere)
+        public IList<Models.LeaveClass> GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select LeaveId,LeaveName,MinUnit,Unit,RemaindProc,RemaindCount,ReportSymbol,Deduct,Color,Classify ");
@@ -114,7 +114,7 @@ namespace BLL
             {
                 strSql.Append(" where " + strWhere);
             }
-            return DbHelperSQL.GetIList<Model.LeaveClass>(strSql.ToString(),CommandType.Text);
+            return DbHelperSQL.GetIList<Models.LeaveClass>(strSql.ToString(),CommandType.Text);
         }
 
         public DataTable GetDataTable()

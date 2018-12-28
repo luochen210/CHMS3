@@ -34,7 +34,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Model.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Model.Machines;
+                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
                     if (model.State)
                     {
                         IsSelect = true;
@@ -73,7 +73,7 @@ namespace CHMS
                 lvCard.BeginUpdate();
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Model.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Model.Machines;
+                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
                     if (model.State)
                     {
 

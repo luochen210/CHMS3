@@ -183,7 +183,7 @@
             // 
             // holidaysBindingSource
             // 
-            this.holidaysBindingSource.DataSource = typeof(Model.Holidays);
+            this.holidaysBindingSource.DataSource = typeof(Models.Holidays);
             // 
             // holidayDateDataGridViewTextBoxColumn
             // 

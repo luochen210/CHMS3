@@ -12,7 +12,7 @@ namespace BLL
     /// 权限类
 
     /// </summary>
-    public class Privilege:DataAccessBase
+    public class Privilege:SQLHelper
     {
        
         public int RoleID = -1; //角色ID

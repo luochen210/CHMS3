@@ -11,7 +11,7 @@ namespace BLL
     /// <summary>
     /// 数据访问类COMPANY。
     /// </summary>
-    public class BLLCompany:DataAccessBase
+    public class BLLCompany:SQLHelper
     {
         public BLLCompany()
         { }
@@ -21,7 +21,7 @@ namespace BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Insert(Model.Company model)
+        public int Insert(Models.Company model)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("insert into COMPANY(");
@@ -33,7 +33,7 @@ namespace BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public int Update(Model.Company model)
+        public int Update(Models.Company model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update COMPANY set ");
@@ -57,11 +57,11 @@ namespace BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.Company GetModel()
+        public Models.Company GetModel()
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1 COMPANYID,City,Country,Addr,Principal,ChineseName,EnglishName,Tel,Mobile,Fax,Email,ZIP,Reamark,WebSite from COMPANY ");
-            IList<Model.Company> result = DbHelperSQL.GetIList<Model.Company>(strSql.ToString(),CommandType.Text);
+            IList<Models.Company> result = DbHelperSQL.GetIList<Models.Company>(strSql.ToString(),CommandType.Text);
             if (result != null && result.Count > 0)
             {
                 return result[0];

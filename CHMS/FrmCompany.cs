@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 //
 using System.Collections;
-using Model;
+using Models;
 using BLL;
 //ÏÂÔØÔ´Âëµ½51aspx
 namespace CHMS

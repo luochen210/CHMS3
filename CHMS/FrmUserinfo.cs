@@ -85,9 +85,9 @@ namespace CHMS
             this.dgvUserinfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvUserinfo.DataSource = Action.GetUserinfoIList("");
         }
-        private Model.Userinfo GetUserModel()
+        private Models.Userinfo GetUserModel()
         {
-            Model.Userinfo model = new Model.Userinfo();
+            Models.Userinfo model = new Models.Userinfo();
             model.UserID = txtUserID.Text;
             model.AttNumber = txtAttNumber.Text;
             model.Ssn = txtSsn.Text;
@@ -196,7 +196,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Model.Userinfo model = this.dgvUserinfo.CurrentRow.DataBoundItem as Model.Userinfo;
+                    Models.Userinfo model = this.dgvUserinfo.CurrentRow.DataBoundItem as Models.Userinfo;
                     if (model != null)
                     {
                         txtUserID.Text = model.UserID;

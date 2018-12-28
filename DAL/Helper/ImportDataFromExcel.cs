@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.OleDb;
-using Models;
 
-namespace DAL.Helper
+namespace DAL
 {
     /// <summary>
     /// 从Excel中导入数据

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BLL;
 using DAL;
-using Model;
+using Models;
 using System.Threading;
 
 namespace CHMS
@@ -49,7 +49,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Model.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Model.Machines;
+                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
                     if (model.State)
                     {
                         IsSelect = true;

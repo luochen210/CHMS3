@@ -81,9 +81,9 @@ namespace CHMS
             this.dgvSchclass.DataSource = new BLLSchclass().GetSchclassList("");
             this.dgvSchclass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private Model.RunNum GetRunNumModel()
+        private Models.RunNum GetRunNumModel()
         {
-            Model.RunNum model = new Model.RunNum();
+            Models.RunNum model = new Models.RunNum();
             model.RunID = txtRunID.Text;
             model.Name = txtName.Text;
             model.Startdate = dtStartdate.Value;
@@ -114,7 +114,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Model.RunNum model = this.dgvRun.CurrentRow.DataBoundItem as Model.RunNum;
+                    Models.RunNum model = this.dgvRun.CurrentRow.DataBoundItem as Models.RunNum;
                     txtRunID.Text = model.RunID;
                     txtName.Text = model.Name;
                     dtStartdate.Value = model.Startdate;
@@ -164,7 +164,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvSchclass.Rows.Count; i++)
                 {
-                    Model.Schclass model = this.dgvSchclass.Rows[i].DataBoundItem as Model.Schclass;
+                    Models.Schclass model = this.dgvSchclass.Rows[i].DataBoundItem as Models.Schclass;
                     if (model.IsShow)
                     {
                         sb.Append(string.Format("INSERT INTO [RunNumSchclass]([RunID],[SchclassID])VALUES('{0}','{1}');",txtRunID.Text,model.Schclassid));

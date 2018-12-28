@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace BLL
 {
-    public class UserInfoDepartments : DataAccessBase
+    public class UserInfoDepartments : SQLHelper
     {
 
         public DataTable GetUserInfoDepartments(string DefaultDeptid, string strName)

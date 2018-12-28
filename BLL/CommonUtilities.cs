@@ -9,7 +9,7 @@ namespace BLL
     /// <summary>
     /// 
     /// </summary>
-    public class CommonUtilities : DataAccessBase
+    public class CommonUtilities : SQLHelper
     {
         /// <summary>
         /// 

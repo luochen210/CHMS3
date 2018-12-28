@@ -8,7 +8,7 @@ using System.Data;
 
 namespace BLL
 {
-    public class BLLUserRun : DataAccessBase
+    public class BLLUserRun : SQLHelper
     {
 
         public ReturnValue AddRunUser(string UserID, string RunID, DateTime StartDate, DateTime EndDate, int Sunday, int Saturday, string SchclassInfo)

@@ -25,7 +25,7 @@ namespace CHMS
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Model.LeaveClass model = new Model.LeaveClass();
+            Models.LeaveClass model = new Models.LeaveClass();
             model.LeaveId = txtLeaveId.Text;
             model.LeaveName = txtLeaveName.Text;
             model.MinUnit = decimal.Parse(txtMinUnit.Text.Trim());
@@ -83,7 +83,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Model.LeaveClass model = dgvLeaveClass.CurrentRow.DataBoundItem as Model.LeaveClass;
+                    Models.LeaveClass model = dgvLeaveClass.CurrentRow.DataBoundItem as Models.LeaveClass;
                     txtLeaveId.Text = model.LeaveId;
                     txtLeaveName.Text = model.LeaveName;
                     txtMinUnit.Text = model.MinUnit.ToString();
