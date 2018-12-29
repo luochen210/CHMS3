@@ -8,10 +8,10 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using BLL;
-using System.Timers;
 using DAL;
-using System.Data.SqlClient;
 using Models;
+using System.Timers;
+using System.Data.SqlClient;
 
 namespace CHMS
 {
@@ -24,7 +24,7 @@ namespace CHMS
         {
             InitializeComponent();
         }
-        private IList<Models.Machines> Machineslist = new BLLMachines().GetMachinesList("");
+        private IList<DAL.Machines> Machineslist = new BLLMachines().GetMachinesList("");
         public zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();
         private bool bIsConnected = false;//the boolean value identifies whether the device is connected
         private int iMachineNumber = 1;//the serial number of the device.After connecting the device ,this value will be changed.
@@ -123,7 +123,7 @@ namespace CHMS
                     tEvent.showMessage.Dispose();
                     tEvent._timeUp = false;
                     //
-                    foreach (Models.Machines model in Machineslist)
+                    foreach (DAL.Machines model in Machineslist)
                     {
                         string IPAdd = model.IP;
                         int Port = int.Parse(model.Port);

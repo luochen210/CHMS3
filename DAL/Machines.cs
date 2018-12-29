@@ -4,26 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
     [Serializable]
-    public class Role : ILoadable
+    public class Machines : ILoadable
     {
-        public Role()
+        public Machines()
         { }
         #region Model
-        private int _idx;
-        private string _ename;
-        private string _cname;
-        private string _dousercode;
-        private DateTime _dodatetime;
-        private string _notes;
-        private int _rptcount;
+        private string _idx;
+        private string _machinename;
+        private string _connecttype;
+        private string _ip;
+        private string _serialport;
+        private string _port;
+        private string _baudrate;
+        private string _machinenumber;
+        private string _commpassword;
+        private string _sn;
         private bool _state;
+        private string _remarks = "";
+        /// <summary>
+        /// 连接状态
+        /// </summary>
+        public string Remarks
+        {
+            get { return _remarks; }
+            set { _remarks = value; }
+        }
+
         /// <summary>
         /// 
         /// </summary>
-        public int Idx
+        public string Idx
         {
             set { _idx = value; }
             get { return _idx; }
@@ -31,50 +44,74 @@ namespace Models
         /// <summary>
         /// 
         /// </summary>
-        public string EName
+        public string MachineName
         {
-            set { _ename = value; }
-            get { return _ename; }
+            set { _machinename = value; }
+            get { return _machinename; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string CName
+        public string ConnectType
         {
-            set { _cname = value; }
-            get { return _cname; }
+            set { _connecttype = value; }
+            get { return _connecttype; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string DoUserCode
+        public string IP
         {
-            set { _dousercode = value; }
-            get { return _dousercode; }
+            set { _ip = value; }
+            get { return _ip; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public DateTime DoDateTime
+        public string SerialPort
         {
-            set { _dodatetime = value; }
-            get { return _dodatetime; }
+            set { _serialport = value; }
+            get { return _serialport; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Notes
+        public string Port
         {
-            set { _notes = value; }
-            get { return _notes; }
+            set { _port = value; }
+            get { return _port; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public int RptCount
+        public string Baudrate
         {
-            set { _rptcount = value; }
-            get { return _rptcount; }
+            set { _baudrate = value; }
+            get { return _baudrate; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string MachineNumber
+        {
+            set { _machinenumber = value; }
+            get { return _machinenumber; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CommPassword
+        {
+            set { _commpassword = value; }
+            get { return _commpassword; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string sn
+        {
+            set { _sn = value; }
+            get { return _sn; }
         }
         /// <summary>
         /// 

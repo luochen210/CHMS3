@@ -313,7 +313,7 @@
             // 
             // machinesBindingSource
             // 
-            this.machinesBindingSource.DataSource = typeof(Models.Machines);
+            this.machinesBindingSource.DataSource = typeof(DAL.Machines);
             // 
             // frmDownloadUser
             // 

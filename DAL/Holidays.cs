@@ -4,51 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
-    [Serializable]
-    public class Module : ILoadable
+
+    public class Holidays : ILoadable
     {
-        public Module()
+        public Holidays()
         { }
         #region Model
-        private int _id;
-        private string _name;
-        private string _signcode;
-        private string _syscode;
+        private int _holidayid;
+        private DateTime _holidaydate;
+        private string _leaveid;
+        private string _leavename;
         /// <summary>
         /// 
         /// </summary>
-        public int Id
+        public string LeaveName
         {
-            set { _id = value; }
-            get { return _id; }
+            get { return _leavename; }
+            set { _leavename = value; }
+        }
+        public int Holidayid
+        {
+            set { _holidayid = value; }
+            get { return _holidayid; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Name
+        public DateTime HolidayDate
         {
-            set { _name = value; }
-            get { return _name; }
+            set { _holidaydate = value; }
+            get { return _holidaydate; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Signcode
+        public string LeaveId
         {
-            set { _signcode = value; }
-            get { return _signcode; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Syscode
-        {
-            set { _syscode = value; }
-            get { return _syscode; }
+            set { _leaveid = value; }
+            get { return _leaveid; }
         }
         #endregion Model
+
         #region ILoadable 成员
 
         void ILoadable.Loading(System.Data.IDataReader dr)
@@ -94,5 +92,6 @@ namespace Models
         }
 
         #endregion
+
     }
 }

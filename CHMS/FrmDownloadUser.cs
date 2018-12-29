@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-//下载源码到51aspx
+
 namespace CHMS
 {
     public partial class FrmDownloadUser : Form
     {
-        private DAL.SqlProvider DbHelperSQL;
+        private DAL.SQLHelper DbHelperSQL;
         private BLLMachines Action;
         public FrmDownloadUser()
         {
             InitializeComponent();
-            DbHelperSQL = new DAL.SqlProvider();
+            DbHelperSQL = new DAL.SQLHelper();
             Action = new BLLMachines();
 
         }
@@ -34,7 +34,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
+                    DAL.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as DAL.Machines;
                     if (model.State)
                     {
                         IsSelect = true;
@@ -73,7 +73,7 @@ namespace CHMS
                 lvCard.BeginUpdate();
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
+                    DAL.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as DAL.Machines;
                     if (model.State)
                     {
 

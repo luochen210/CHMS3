@@ -13,12 +13,12 @@ namespace CHMS
 {
     public partial class FrmUpload : Form
     {
-        private DAL.SqlProvider DbHelperSQL;
+        private DAL.SQLHelper DbHelperSQL;
         private UserInfoDepartments Ation = new UserInfoDepartments();
         public FrmUpload()
         {
             InitializeComponent();
-            DbHelperSQL = new DAL.SqlProvider();
+            DbHelperSQL = new DAL.SQLHelper();
         }
         public zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();
         private bool bIsConnected = false;//the boolean value identifies whether the device is connected
@@ -45,7 +45,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
+                    DAL.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as DAL.Machines;
                     if (model.State)
                     {
                         IsSelect = true;
@@ -62,7 +62,7 @@ namespace CHMS
             {                
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
+                    DAL.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as DAL.Machines;
                     if (model.State)
                     {                 
                         string IPAdd = model.IP;
@@ -99,7 +99,7 @@ namespace CHMS
              
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
+                    DAL.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as DAL.Machines;
                     if (model.State)
                     {               
                         string IPAdd = model.IP;

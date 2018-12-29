@@ -4,46 +4,68 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
 
-    public class Holidays : ILoadable
+    [Serializable]
+    public class RunNum : ILoadable
     {
-        public Holidays()
+        public RunNum()
         { }
         #region Model
-        private int _holidayid;
-        private DateTime _holidaydate;
-        private string _leaveid;
-        private string _leavename;
+        private string _runid;
+        private string _name;
+        private DateTime _startdate;
+        private DateTime _enddate;
+        private int _cyle;
+        private string _units;     
         /// <summary>
         /// 
         /// </summary>
-        public string LeaveName
+        public string RunID
         {
-            get { return _leavename; }
-            set { _leavename = value; }
-        }
-        public int Holidayid
-        {
-            set { _holidayid = value; }
-            get { return _holidayid; }
+            set { _runid = value; }
+            get { return _runid; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public DateTime HolidayDate
+        public string Name
         {
-            set { _holidaydate = value; }
-            get { return _holidaydate; }
+            set { _name = value; }
+            get { return _name; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string LeaveId
+        public DateTime Startdate
         {
-            set { _leaveid = value; }
-            get { return _leaveid; }
+            set { _startdate = value; }
+            get { return _startdate; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime Enddate
+        {
+            set { _enddate = value; }
+            get { return _enddate; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Cyle
+        {
+            set { _cyle = value; }
+            get { return _cyle; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Units
+        {
+            set { _units = value; }
+            get { return _units; }
         }
         #endregion Model
 
@@ -92,6 +114,5 @@ namespace Models
         }
 
         #endregion
-
     }
 }

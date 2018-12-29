@@ -47,13 +47,13 @@ namespace BLL
 
             return new ReturnValue(iReturnValue, strErrInfo);
         }
-        public IList<Models.Holidays> GetHolidaysIList(string strWhere)
+        public IList<DAL.Holidays> GetHolidaysIList(string strWhere)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT h.[Holidayid],h.[HolidayDate],h.[LeaveId],lc.[LeaveName]");
             sb.Append("	FROM Holidays h  ");
             sb.Append("	INNER JOIN  LeaveClass lc ON h.LeaveId=lc.LeaveId ");
-            return DbHelperSQL.GetIList<Models.Holidays>(sb.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<DAL.Holidays>(sb.ToString(), CommandType.Text);
         }
         public int Delete(string Holidayid)
         {

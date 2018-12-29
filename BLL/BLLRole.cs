@@ -18,7 +18,7 @@ namespace BLL
        /// </summary>
        /// <param name="model">实体对象</param>
        /// <returns>0或1</returns>
-       public int Add(Models.Role model)
+       public int Add(DAL.Role model)
        {
            StringBuilder sb = new StringBuilder();
            sb.Append("INSERT INTO Role ([Idx], CName, DoUserCode, DoDateTime, Notes, RptCount,State)");
@@ -31,7 +31,7 @@ namespace BLL
        /// </summary>
        /// <param name="model">实体对象</param>
        /// <returns>0或1</returns>
-       public int Update(Models.Role model)
+       public int Update(DAL.Role model)
        {
            StringBuilder sb = new StringBuilder();
            sb.Append("UPDATE Role SET CName =@CName, DoUserCode=@DoUserCode, DoDateTime=@DoDateTime, ");
@@ -52,9 +52,9 @@ namespace BLL
        /// 角色组ILIST对象
        /// </summary>
        /// <returns>角色组ILIST对象</returns>
-       public IList<Models.Role> GetRoleIlist()
+       public IList<DAL.Role> GetRoleIlist()
        {
-           return DbHelperSQL.GetIList<Models.Role>("SELECT Idx, CName, DoUserCode, DoDateTime, Notes,RptCount, State FROM Role", CommandType.Text);
+           return DbHelperSQL.GetIList<DAL.Role>("SELECT Idx, CName, DoUserCode, DoDateTime, Notes,RptCount, State FROM Role", CommandType.Text);
        }
        /// <summary>
        /// 获得角色组的最大编号
@@ -65,7 +65,7 @@ namespace BLL
            return DbHelperSQL.GetMaxID("Role", "Idx");
        }
 
-       public IList<Models.Module> GetModuleList(string strWhere)
+       public IList<DAL.Module> GetModuleList(string strWhere)
        {
            StringBuilder strSql = new StringBuilder();
            strSql.Append("select Id,Name,Signcode,Syscode ");
@@ -74,7 +74,7 @@ namespace BLL
            {
                strSql.Append(" where " + strWhere);
            }
-           return DbHelperSQL.GetIList<Models.Module>(strSql.ToString(),CommandType.Text);
+           return DbHelperSQL.GetIList<DAL.Module>(strSql.ToString(),CommandType.Text);
        }
 
        public DataTable GetFuncnoDataTable(int ModuleID)

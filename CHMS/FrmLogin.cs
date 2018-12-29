@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using BLL;
+using Models;
 
 
 namespace CHMS
@@ -33,7 +34,7 @@ namespace CHMS
             }
             string UserCode = textName.Text;
             string Password = textPass.Text;
-            Models.User UserInfo = null;
+            User UserInfo = null;
             switch (new Login().LoginValidate(UserCode, Password, out UserInfo))
             {
                 case Login.LoginResult.NoAdmin:

@@ -94,7 +94,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Models.Holidays model = this.dgvHolidays.CurrentRow.DataBoundItem as Models.Holidays;
+                    DAL.Holidays model = this.dgvHolidays.CurrentRow.DataBoundItem as DAL.Holidays;
                     dtStartDate.Value = model.HolidayDate;
                     dtEndDate.Value = model.HolidayDate;
                     cbLeaveClass.SelectedValue = model.LeaveId.ToString();

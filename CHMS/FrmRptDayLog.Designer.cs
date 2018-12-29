@@ -34,12 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnXls = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnQuery = new System.Windows.Forms.Button();
-            this.btnNotAll = new System.Windows.Forms.Button();
-            this.btnAll = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -62,9 +56,15 @@
             this.tvUserInfo = new System.Windows.Forms.TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnXls = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnQuery = new System.Windows.Forms.Button();
+            this.btnNotAll = new System.Windows.Forms.Button();
+            this.btnAll = new System.Windows.Forms.Button();
             this.fastSelect1 = new CHMS.FastSelect(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,79 +88,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1553, 55);
             this.panel1.TabIndex = 4;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnClose.Location = new System.Drawing.Point(477, 0);
-            this.btnClose.Name = "btnClose";
-            this.fastSelect1.SetSelectionSource(this.btnClose, null);
-            this.btnClose.Size = new System.Drawing.Size(93, 55);
-            this.btnClose.TabIndex = 58;
-            this.btnClose.Text = "关闭";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnXls
-            // 
-            this.btnXls.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnXls.Location = new System.Drawing.Point(384, 0);
-            this.btnXls.Name = "btnXls";
-            this.fastSelect1.SetSelectionSource(this.btnXls, null);
-            this.btnXls.Size = new System.Drawing.Size(93, 55);
-            this.btnXls.TabIndex = 57;
-            this.btnXls.Text = "导出";
-            this.btnXls.UseVisualStyleBackColor = true;
-            this.btnXls.Click += new System.EventHandler(this.btnXls_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPrint.Location = new System.Drawing.Point(288, 0);
-            this.btnPrint.Name = "btnPrint";
-            this.fastSelect1.SetSelectionSource(this.btnPrint, null);
-            this.btnPrint.Size = new System.Drawing.Size(96, 55);
-            this.btnPrint.TabIndex = 56;
-            this.btnPrint.Text = "打印";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnQuery
-            // 
-            this.btnQuery.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnQuery.Location = new System.Drawing.Point(192, 0);
-            this.btnQuery.Name = "btnQuery";
-            this.fastSelect1.SetSelectionSource(this.btnQuery, null);
-            this.btnQuery.Size = new System.Drawing.Size(96, 55);
-            this.btnQuery.TabIndex = 55;
-            this.btnQuery.Text = "查询";
-            this.btnQuery.UseVisualStyleBackColor = true;
-            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-            // 
-            // btnNotAll
-            // 
-            this.btnNotAll.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNotAll.Location = new System.Drawing.Point(96, 0);
-            this.btnNotAll.Name = "btnNotAll";
-            this.fastSelect1.SetSelectionSource(this.btnNotAll, this.tvUserInfo);
-            this.fastSelect1.SetSelectionType(this.btnNotAll, CHMS.SelectionType.反选);
-            this.btnNotAll.Size = new System.Drawing.Size(96, 55);
-            this.btnNotAll.TabIndex = 54;
-            this.btnNotAll.Text = "反选";
-            this.btnNotAll.UseVisualStyleBackColor = true;
-            // 
-            // btnAll
-            // 
-            this.btnAll.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAll.Location = new System.Drawing.Point(0, 0);
-            this.btnAll.Name = "btnAll";
-            this.fastSelect1.SetSelectionSource(this.btnAll, this.tvUserInfo);
-            this.fastSelect1.SetSelectionType(this.btnAll, CHMS.SelectionType.全选);
-            this.btnAll.Size = new System.Drawing.Size(96, 55);
-            this.btnAll.TabIndex = 47;
-            this.btnAll.Text = "全选";
-            this.btnAll.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -345,37 +272,110 @@
             // 
             // dtEndDate
             // 
-            this.dtEndDate.Location = new System.Drawing.Point(288, 8);
+            this.dtEndDate.Location = new System.Drawing.Point(280, 8);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.Size = new System.Drawing.Size(115, 21);
             this.dtEndDate.TabIndex = 52;
             // 
+            // dtStartDate
+            // 
+            this.dtStartDate.Location = new System.Drawing.Point(75, 8);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(122, 21);
+            this.dtStartDate.TabIndex = 50;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 12);
+            this.label4.Location = new System.Drawing.Point(209, 12);
             this.label4.Name = "label4";
             this.fastSelect1.SetSelectionSource(this.label4, null);
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 51;
             this.label4.Text = "结束日期：";
             // 
-            // dtStartDate
-            // 
-            this.dtStartDate.Location = new System.Drawing.Point(83, 8);
-            this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(122, 21);
-            this.dtStartDate.TabIndex = 50;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 13);
+            this.label3.Location = new System.Drawing.Point(5, 13);
             this.label3.Name = "label3";
             this.fastSelect1.SetSelectionSource(this.label3, null);
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 49;
             this.label3.Text = "开始日期：";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClose.Location = new System.Drawing.Point(477, 0);
+            this.btnClose.Name = "btnClose";
+            this.fastSelect1.SetSelectionSource(this.btnClose, null);
+            this.btnClose.Size = new System.Drawing.Size(93, 55);
+            this.btnClose.TabIndex = 58;
+            this.btnClose.Text = "关闭";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnXls
+            // 
+            this.btnXls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnXls.Location = new System.Drawing.Point(384, 0);
+            this.btnXls.Name = "btnXls";
+            this.fastSelect1.SetSelectionSource(this.btnXls, null);
+            this.btnXls.Size = new System.Drawing.Size(93, 55);
+            this.btnXls.TabIndex = 57;
+            this.btnXls.Text = "导出";
+            this.btnXls.UseVisualStyleBackColor = true;
+            this.btnXls.Click += new System.EventHandler(this.btnXls_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrint.Location = new System.Drawing.Point(288, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.fastSelect1.SetSelectionSource(this.btnPrint, null);
+            this.btnPrint.Size = new System.Drawing.Size(96, 55);
+            this.btnPrint.TabIndex = 56;
+            this.btnPrint.Text = "打印";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnQuery.Location = new System.Drawing.Point(192, 0);
+            this.btnQuery.Name = "btnQuery";
+            this.fastSelect1.SetSelectionSource(this.btnQuery, null);
+            this.btnQuery.Size = new System.Drawing.Size(96, 55);
+            this.btnQuery.TabIndex = 55;
+            this.btnQuery.Text = "查询";
+            this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
+            // 
+            // btnNotAll
+            // 
+            this.btnNotAll.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNotAll.Location = new System.Drawing.Point(96, 0);
+            this.btnNotAll.Name = "btnNotAll";
+            this.fastSelect1.SetSelectionSource(this.btnNotAll, this.tvUserInfo);
+            this.fastSelect1.SetSelectionType(this.btnNotAll, CHMS.SelectionType.反选);
+            this.btnNotAll.Size = new System.Drawing.Size(96, 55);
+            this.btnNotAll.TabIndex = 54;
+            this.btnNotAll.Text = "反选";
+            this.btnNotAll.UseVisualStyleBackColor = true;
+            // 
+            // btnAll
+            // 
+            this.btnAll.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAll.Location = new System.Drawing.Point(0, 0);
+            this.btnAll.Name = "btnAll";
+            this.fastSelect1.SetSelectionSource(this.btnAll, this.tvUserInfo);
+            this.fastSelect1.SetSelectionType(this.btnAll, CHMS.SelectionType.全选);
+            this.btnAll.Size = new System.Drawing.Size(96, 55);
+            this.btnAll.TabIndex = 47;
+            this.btnAll.Text = "全选";
+            this.btnAll.UseVisualStyleBackColor = true;
             // 
             // FrmRptDayLog
             // 

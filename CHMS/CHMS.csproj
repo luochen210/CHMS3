@@ -12,7 +12,7 @@
     <AssemblyName>CHMS</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>knotes-2.ico</ApplicationIcon>
+    <ApplicationIcon>knotes.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -542,7 +542,7 @@
     <None Include="Resources\主界面-.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="knotes-2.ico" />
+    <Content Include="knotes.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

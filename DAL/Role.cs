@@ -4,23 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
-   
     [Serializable]
-    public class Attparam : ILoadable
+    public class Role : ILoadable
     {
-        public Attparam()
+        public Role()
         { }
         #region Model
         private int _idx;
-        private string _paratype;
-        private string _paraname;
-        private string _paravalue;
+        private string _ename;
+        private string _cname;
+        private string _dousercode;
+        private DateTime _dodatetime;
+        private string _notes;
+        private int _rptcount;
+        private bool _state;
         /// <summary>
         /// 
         /// </summary>
-        public int IDX
+        public int Idx
         {
             set { _idx = value; }
             get { return _idx; }
@@ -28,26 +31,58 @@ namespace Models
         /// <summary>
         /// 
         /// </summary>
-        public string ParaType
+        public string EName
         {
-            set { _paratype = value; }
-            get { return _paratype; }
+            set { _ename = value; }
+            get { return _ename; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string ParaName
+        public string CName
         {
-            set { _paraname = value; }
-            get { return _paraname; }
+            set { _cname = value; }
+            get { return _cname; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string ParaValue
+        public string DoUserCode
         {
-            set { _paravalue = value; }
-            get { return _paravalue; }
+            set { _dousercode = value; }
+            get { return _dousercode; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime DoDateTime
+        {
+            set { _dodatetime = value; }
+            get { return _dodatetime; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Notes
+        {
+            set { _notes = value; }
+            get { return _notes; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int RptCount
+        {
+            set { _rptcount = value; }
+            get { return _rptcount; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool State
+        {
+            set { _state = value; }
+            get { return _state; }
         }
         #endregion Model
         #region ILoadable 成员

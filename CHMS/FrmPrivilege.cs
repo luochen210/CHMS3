@@ -70,7 +70,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Models.Role model = this.dgvRole.CurrentRow.DataBoundItem as Models.Role;
+                    DAL.Role model = this.dgvRole.CurrentRow.DataBoundItem as DAL.Role;
                     if (model != null)
                     {
                         txtIdx.Text = model.Idx.ToString();
@@ -88,7 +88,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Models.Module model = this.dgvModule.CurrentRow.DataBoundItem as Models.Module;
+                    DAL.Module model = this.dgvModule.CurrentRow.DataBoundItem as DAL.Module;
                     if (model != null)
                     {
                         dgvFunc.DataSource = new BLL.BLLRole().GetFuncnoDataTable(model.Id);

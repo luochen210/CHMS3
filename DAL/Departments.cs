@@ -4,71 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
-
     [Serializable]
-    public class RunNum : ILoadable
+    public class Departments : ILoadable
     {
-        public RunNum()
+        public Departments()
         { }
         #region Model
-        private string _runid;
-        private string _name;
-        private DateTime _startdate;
-        private DateTime _enddate;
-        private int _cyle;
-        private string _units;     
+        private string _deptid;
+        private string _deptname;
+        private string _supdeptid;
+        private string _supdeptname;
         /// <summary>
         /// 
         /// </summary>
-        public string RunID
+        public string DEPTID
         {
-            set { _runid = value; }
-            get { return _runid; }
+            set { _deptid = value; }
+            get { return _deptid; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Name
+        public string DEPTNAME
         {
-            set { _name = value; }
-            get { return _name; }
+            set { _deptname = value; }
+            get { return _deptname; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public DateTime Startdate
+        public string SUPDEPTID
         {
-            set { _startdate = value; }
-            get { return _startdate; }
+            set { _supdeptid = value; }
+            get { return _supdeptid; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public DateTime Enddate
+        public string SUPDEPTNAME
         {
-            set { _enddate = value; }
-            get { return _enddate; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int Cyle
-        {
-            set { _cyle = value; }
-            get { return _cyle; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Units
-        {
-            set { _units = value; }
-            get { return _units; }
+            set { _supdeptname = value; }
+            get { return _supdeptname; }
         }
         #endregion Model
-
         #region ILoadable 成员
 
         void ILoadable.Loading(System.Data.IDataReader dr)

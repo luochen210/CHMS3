@@ -67,8 +67,8 @@ namespace CHMS
         {
             List<ListItem> li = new List<ListItem>();
             li.Add(new ListItem("", "请选择"));
-            IList<Models.Departments> result = new BLLDepartments().GetList("");
-            foreach (Models.Departments item in result)
+            IList<DAL.Departments> result = new BLLDepartments().GetList("");
+            foreach (DAL.Departments item in result)
             {
                 li.Add(new ListItem(item.DEPTID, item.DEPTNAME));
             }

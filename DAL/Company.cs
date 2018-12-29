@@ -4,124 +4,145 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
+    /// <summary>
+    /// 实体类COMPANY 。(属性说明自动提取数据库字段的描述信息)
+    /// </summary>
     [Serializable]
-    public class Machines : ILoadable
+    public class Company : ILoadable
     {
-        public Machines()
+        public Company()
         { }
-        #region Model
-        private string _idx;
-        private string _machinename;
-        private string _connecttype;
-        private string _ip;
-        private string _serialport;
-        private string _port;
-        private string _baudrate;
-        private string _machinenumber;
-        private string _commpassword;
-        private string _sn;
-        private bool _state;
-        private string _remarks = "";
-        /// <summary>
-        /// 连接状态
-        /// </summary>
-        public string Remarks
-        {
-            get { return _remarks; }
-            set { _remarks = value; }
-        }
-
+        #region Models
+        private string _companyid;
+        private string _city;
+        private string _country;
+        private string _addr;
+        private string _principal;
+        private string _chinesename;
+        private string _englishname;
+        private string _tel;
+        private string _mobile;
+        private string _fax;
+        private string _email;
+        private string _zip;
+        private string _reamark;
+        private string _website;
         /// <summary>
         /// 
         /// </summary>
-        public string Idx
+        public string CompanyID
         {
-            set { _idx = value; }
-            get { return _idx; }
+            set { _companyid = value; }
+            get { return _companyid; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string MachineName
+        public string City
         {
-            set { _machinename = value; }
-            get { return _machinename; }
+            set { _city = value; }
+            get { return _city; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string ConnectType
+        public string Country
         {
-            set { _connecttype = value; }
-            get { return _connecttype; }
+            set { _country = value; }
+            get { return _country; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string IP
+        public string Addr
         {
-            set { _ip = value; }
-            get { return _ip; }
+            set { _addr = value; }
+            get { return _addr; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string SerialPort
+        public string Principal
         {
-            set { _serialport = value; }
-            get { return _serialport; }
+            set { _principal = value; }
+            get { return _principal; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Port
+        public string ChineseName
         {
-            set { _port = value; }
-            get { return _port; }
+            set { _chinesename = value; }
+            get { return _chinesename; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Baudrate
+        public string EnglishName
         {
-            set { _baudrate = value; }
-            get { return _baudrate; }
+            set { _englishname = value; }
+            get { return _englishname; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string MachineNumber
+        public string Tel
         {
-            set { _machinenumber = value; }
-            get { return _machinenumber; }
+            set { _tel = value; }
+            get { return _tel; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string CommPassword
+        public string Mobile
         {
-            set { _commpassword = value; }
-            get { return _commpassword; }
+            set { _mobile = value; }
+            get { return _mobile; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string sn
+        public string Fax
         {
-            set { _sn = value; }
-            get { return _sn; }
+            set { _fax = value; }
+            get { return _fax; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public bool State
+        public string Email
         {
-            set { _state = value; }
-            get { return _state; }
+            set { _email = value; }
+            get { return _email; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Zip
+        {
+            set { _zip = value; }
+            get { return _zip; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Reamark
+        {
+            set { _reamark = value; }
+            get { return _reamark; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string WebSite
+        {
+            set { _website = value; }
+            get { return _website; }
         }
         #endregion Model
+
         #region ILoadable 成员
 
         void ILoadable.Loading(System.Data.IDataReader dr)
@@ -167,5 +188,6 @@ namespace Models
         }
 
         #endregion
+
     }
 }

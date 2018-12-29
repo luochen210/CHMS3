@@ -4,49 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
+   
     [Serializable]
-    public class Departments : ILoadable
+    public class Attparam : ILoadable
     {
-        public Departments()
+        public Attparam()
         { }
         #region Model
-        private string _deptid;
-        private string _deptname;
-        private string _supdeptid;
-        private string _supdeptname;
+        private int _idx;
+        private string _paratype;
+        private string _paraname;
+        private string _paravalue;
         /// <summary>
         /// 
         /// </summary>
-        public string DEPTID
+        public int IDX
         {
-            set { _deptid = value; }
-            get { return _deptid; }
+            set { _idx = value; }
+            get { return _idx; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string DEPTNAME
+        public string ParaType
         {
-            set { _deptname = value; }
-            get { return _deptname; }
+            set { _paratype = value; }
+            get { return _paratype; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string SUPDEPTID
+        public string ParaName
         {
-            set { _supdeptid = value; }
-            get { return _supdeptid; }
+            set { _paraname = value; }
+            get { return _paraname; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string SUPDEPTNAME
+        public string ParaValue
         {
-            set { _supdeptname = value; }
-            get { return _supdeptname; }
+            set { _paravalue = value; }
+            get { return _paravalue; }
         }
         #endregion Model
         #region ILoadable 成员

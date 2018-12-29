@@ -170,8 +170,8 @@ namespace CHMS
         {
             StringBuilder sb = new StringBuilder();
             BLLRunNum CurBLLRunNum = new BLLRunNum();
-            IList<Models.RunNumSchclass> result = CurBLLRunNum.GetRunNumSchclassList(string.Format(" AND RunID='{0}'", RunID));
-            foreach (Models.RunNumSchclass model in result)
+            IList<DAL.RunNumSchclass> result = CurBLLRunNum.GetRunNumSchclassList(string.Format(" AND RunID='{0}'", RunID));
+            foreach (DAL.RunNumSchclass model in result)
             {
                  sb.Append(string.Format("INSERT INTO #TempSchclass(SchclassID)VALUES('{0}');", model.SchclassID));
             }

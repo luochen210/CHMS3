@@ -15,12 +15,12 @@ namespace CHMS
 {
     public partial class FrmAttLog : Form
     {
-        private DAL.SqlProvider DbHelperSQL;
+        private DAL.SQLHelper DbHelperSQL;
         private BLLMachines Action;
         public FrmAttLog()
         {
             InitializeComponent();
-            DbHelperSQL = new DAL.SqlProvider();
+            DbHelperSQL = new DAL.SQLHelper();
             Action = new BLLMachines();
         }
 
@@ -36,11 +36,22 @@ namespace CHMS
         public delegate void UpdataDgv(DataTable dtTable);
         UpdataDgv objUpdataDgv;//dgv更新对象
 
+        //声明下载委托
         public delegate void GetDoSomeWork();
         GetDoSomeWork objGetDoSomeWork;
 
+        //设置进度值的委托
+        public delegate void SetPrg(int iValue, int iMachineNumber);
+        SetPrg objSetPrg;
 
-        //连接设备
+        //声明进度条委托
+        public delegate void GetStartPrg(int iGLCount);
+        GetStartPrg objGetStartPrg;
+
+        //声明lbl委托
+        public delegate void UpdateLbl(string msg);
+        UpdateLbl objUpdateLbl;
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             bool IsSelect = false;
@@ -49,7 +60,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvfrmMachines.Rows.Count; i++)
                 {
-                    Models.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as Models.Machines;
+                    DAL.Machines model = this.dgvfrmMachines.Rows[i].DataBoundItem as DAL.Machines;
                     if (model.State)
                     {
                         IsSelect = true;
@@ -87,7 +98,7 @@ namespace CHMS
             btnDownload.Enabled = true;//打开下载按钮
         }
 
-        private void btnDownloadAttLogs_Click(object sender, EventArgs e)
+        private void btnDownload_Click(object sender, EventArgs e)
         {
             btnDownload.Enabled = false;//关闭下载按钮
             if (bIsConnected == false)
@@ -96,62 +107,20 @@ namespace CHMS
                 return;
             }
 
-            Cursor = Cursors.WaitCursor;//改变鼠标
-            axCZKEM1.EnableDevice(iMachineNumber, false);//禁用设备
-            if (axCZKEM1.ReadGeneralLogData(iMachineNumber))//将记录读入内存
+            //实例委托
+            objGetDoSomeWork = DoSomeWork;
+
+            //多线程下载记录
+            Thread objThread = new Thread(new ThreadStart(delegate
             {
-                //实例委托
-                objGetDoSomeWork = DoSomeWork;
-                //异步取得记录
-                BeginInvoke(objGetDoSomeWork);
-            }
-            else
-            {
-                Cursor = Cursors.Default;
-                axCZKEM1.GetLastError(ref idwErrorCode);
-
-                if (idwErrorCode != 0)
-                {
-                    MessageBox.Show("Reading data from terminal failed,ErrorCode: " + idwErrorCode.ToString(), "Error");
-                }
-                else
-                {
-                    axCZKEM1.GetLastError(ref idwErrorCode);
-                    MessageBox.Show("Operation failed,ErrorCode=" + idwErrorCode.ToString(), "Error");
-                }
-            }
-
-            //if (axCZKEM1.GetDeviceStatus(iMachineNumber, 6, ref iValue)) //Here we use the function "GetDeviceStatus" to get the record's count.The parameter "Status" is 6.
-            //{
-            //    //显示下载进度数据
-            //    //objFrmProgress.Text = model.MachineName + "的" + iValue + "条数据";
-            //    FrmProgress objFrmProgress = new FrmProgress();
-            //    Thread objThread = new Thread(new ThreadStart(delegate
-            //    {
-            //        DoSomeWork();
-            //    }));
-            //    objThread.Start();
-            //}
-
-            axCZKEM1.EnableDevice(iMachineNumber, true);//设置设备状态为开启
-
-            Cursor = Cursors.Default;//鼠标恢复
+                objGetDoSomeWork();
+            }));
+            objThread.Start();
 
         }
 
-        private void frmAttLog_Load(object sender, EventArgs e)
-        {
-            dgvfrmMachines.AutoGenerateColumns = false;
-            this.machinesBindingSource.DataSource = new BLLMachines().GetMachinesList("");
-            this.machinesBindingSource.ResetBindings(false);
-        }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.Dispose();
-        }
-
+        //记录下载委托实现方法
         private void DoSomeWork()
         {
             //初始化记录变量
@@ -173,27 +142,74 @@ namespace CHMS
             //清空DataTable行数据
             AttLogTable.Rows.Clear();
 
-            //开始下载考勤
-            while (axCZKEM1.GetGeneralLogDataStr(iMachineNumber, ref idwEnrollNumber, ref idwVerifyMode, ref idwInOutMode, ref sTime))//从内存取得记录
+            axCZKEM1.EnableDevice(iMachineNumber, false);//禁用设备
+
+            if (axCZKEM1.GetDeviceStatus(iMachineNumber, 6, ref iValue)) //Here we use the function "GetDeviceStatus" to get the record's count.The parameter "Status" is 6.
             {
-                iGLCount++;
-                //把记录循环写入DataTable表
-                DataRow dr = AttLogTable.NewRow();
-                dr[0] = idwEnrollNumber;
-                dr[1] = iMachineNumber;
-                dr[2] = idwVerifyMode;
-                dr[3] = idwInOutMode;
-                dr[4] = sTime;
-                AttLogTable.Rows.Add(dr);
+                //设置Prg的值
+                objSetPrg = setPrg;
+                BeginInvoke(objSetPrg, iValue, iMachineNumber);
+
+                objUpdateLbl = updateLbl;//实例lbl修改的委托
+
+                objGetStartPrg = startPrg;//实例Prg委托
+
+                //读取考勤
+                if (axCZKEM1.ReadGeneralLogData(iMachineNumber))//将记录读入内存
+                {
+                    //开始下载考勤
+                    while (axCZKEM1.GetGeneralLogDataStr(iMachineNumber, ref idwEnrollNumber, ref idwVerifyMode, ref idwInOutMode, ref sTime))//从内存取得记录
+                    {
+                        iGLCount++;
+
+                        //把记录循环写入DataTable表
+                        DataRow dr = AttLogTable.NewRow();
+                        dr[0] = idwEnrollNumber;
+                        dr[1] = iMachineNumber;
+                        dr[2] = idwVerifyMode;
+                        dr[3] = idwInOutMode;
+                        dr[4] = sTime;
+                        AttLogTable.Rows.Add(dr);
+
+                        //异步执行
+                        BeginInvoke(objUpdateLbl, iGLCount + "/" + iValue);
+
+                        //异步执行
+                        BeginInvoke(objGetStartPrg, iGLCount);
+
+                    }
+                    //修改lbl
+                    objUpdateLbl = updateLbl;
+                    BeginInvoke(objUpdateLbl, "记录下载完毕！");
+                }
+                else
+                {
+                    Cursor = Cursors.Default;
+                    axCZKEM1.GetLastError(ref idwErrorCode);
+
+                    if (idwErrorCode != 0)
+                    {
+                        MessageBox.Show("Reading data from terminal failed,ErrorCode: " + idwErrorCode.ToString(), "Error");
+                    }
+                    else
+                    {
+                        axCZKEM1.GetLastError(ref idwErrorCode);
+                        MessageBox.Show("Operation failed,ErrorCode=" + idwErrorCode.ToString(), "Error");
+                    }
+                }
+
+
             }
+
+            axCZKEM1.EnableDevice(iMachineNumber, true);//设置设备状态为开启
 
             //实例化委托
             objUpdataDgv = new UpdataDgv(dgvDataSource);
 
-            //异步取得记录
+            //异步显示记录
             BeginInvoke(objUpdataDgv, AttLogTable);
 
-            #region 数据批量对比去重
+            #region 数据批量对比去重---暂停使用
 
             ////读取数据库已有数据
             //DataTable PastLogTable = objAttRecordService.GetAllOriginalLog().Tables[0];
@@ -216,16 +232,50 @@ namespace CHMS
 
         }
 
+        //进度条委托实现方法
+        public void startPrg(int iGLCount)
+        {
+            prgDownload.Value = iGLCount;//设置当前值            
+        }
 
-        /// <summary>
-        /// 更新dgvAttLog
-        /// </summary>
-        /// <param name="AttLogTable">原始记录DataTable</param>
+        //lbl委托实现方法
+        public void updateLbl(string str)
+        {
+            lblPrg.Text = str;
+        }
+
+        //prg设置委托实现方法
+        public void setPrg(int iValue, int iMachineNumber)
+        {
+            //进度条
+            prgDownload.Maximum = iValue;//设置最大长度值
+            prgDownload.Step = 1;//设置每次增长多少
+
+            //显示条数提示
+            lblPrg.Text = iMachineNumber + "号设备的记录条数：" + iValue + "条！";//记录条数提示
+        }
+
+        //dgv委托更新显示实现方法
         public void dgvDataSource(DataTable AttLogTable)
         {
             //更新dgvAttLog
             dgvAttLog.DataSource = AttLogTable;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
+
+        private void frmAttLog_Load(object sender, EventArgs e)
+        {
+            dgvfrmMachines.AutoGenerateColumns = false;
+            this.machinesBindingSource.DataSource = new BLLMachines().GetMachinesList("");
+            this.machinesBindingSource.ResetBindings(false);
+        }
+
+
 
         //#region 记录下载保存的方法
         //public void iDateTable()
@@ -304,6 +354,7 @@ namespace CHMS
         //}
         //#endregion
 
+        
         private void FrmAttLog_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMain.objFrmAttLog = null;

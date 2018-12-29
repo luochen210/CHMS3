@@ -60,7 +60,7 @@ namespace CHMS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Models.Departments model = new Models.Departments();
+            DAL.Departments model = new DAL.Departments();
             model.DEPTID = txtDEPTID.Text.Trim();
             model.DEPTNAME = txtDEPTNAME.Text.Trim();
             model.SUPDEPTID = txtSUPDEPTID.Text.Trim();
@@ -96,7 +96,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Models.Departments model = this.dgvDeartments.CurrentRow.DataBoundItem as Models.Departments;
+                    DAL.Departments model = this.dgvDeartments.CurrentRow.DataBoundItem as DAL.Departments;
                     if (model != null)
                     {
                         txtDEPTID.Text = model.DEPTID.ToString();

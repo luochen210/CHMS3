@@ -18,7 +18,7 @@ namespace BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Models.Machines model)
+        public int Add(DAL.Machines model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into Machines(");
@@ -55,7 +55,7 @@ namespace BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public int Update(Models.Machines model)
+        public int Update(DAL.Machines model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update Machines set ");
@@ -118,7 +118,7 @@ namespace BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Models.Machines GetModel(string Idx)
+        public DAL.Machines GetModel(string Idx)
         {
 
             StringBuilder strSql = new StringBuilder();
@@ -129,7 +129,7 @@ namespace BLL
 					new SqlParameter("@Idx", SqlDbType.VarChar,50)
             };
             parameters[0].Value = Idx;
-            IList<Models.Machines> result = DbHelperSQL.GetIList<Models.Machines>(strSql.ToString(), CommandType.Text, parameters);
+            IList<DAL.Machines> result = DbHelperSQL.GetIList<DAL.Machines>(strSql.ToString(), CommandType.Text, parameters);
             if (result != null && result.Count > 0)
             {
                 return result[0];
@@ -143,7 +143,7 @@ namespace BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public IList<Models.Machines> GetMachinesList(string strWhere)
+        public IList<DAL.Machines> GetMachinesList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select Idx,MachineName,ConnectType,IP,SerialPort,Port,Baudrate,MachineNumber,CommPassword,sn,State,'' Remarks");
@@ -152,7 +152,7 @@ namespace BLL
             {
                 strSql.Append(" where " + strWhere);
             }
-            return DbHelperSQL.GetIList<Models.Machines>(strSql.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<DAL.Machines>(strSql.ToString(), CommandType.Text);
         }
         #endregion  成员方法
     }

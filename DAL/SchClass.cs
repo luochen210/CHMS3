@@ -4,92 +4,137 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
+
     [Serializable]
-    public class LeaveClass : ILoadable
+    public class Schclass : ILoadable
     {
-        public LeaveClass()
+        public Schclass()
         { }
         #region Model
-        private string _leaveid;
-        private string _leavename;
-        private decimal _minunit;
-        private int _unit;
-        private int _remaindproc;
-        private int _remaindcount;
-        private string _reportsymbol;
-        private decimal _deduct;
-        private string _color;
-        private int _classify;
+        private string _schclassid;
+        private string _schname;
+        private string _starttime;
+        private string _endtime;
+        private int _lateminutes;
+        private int _earlyminutes;
+        private int _checkin;
+        private int _checkout;
+        private string _checkintime1;
+        private string _checkintime2;
+        private string _checkouttime1;
+        private string _checkouttime2;
+        private int _color;
+        private decimal _autobind;
+        private bool _isshow = true;
         /// <summary>
         /// 
         /// </summary>
-        public string LeaveId
+
+
+        public bool IsShow
         {
-            set { _leaveid = value; }
-            get { return _leaveid; }
+            get { return _isshow; }
+            set { _isshow = value; }
+        }
+        public string Schclassid
+        {
+            set { _schclassid = value; }
+            get { return _schclassid; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string LeaveName
+        public string Schname
         {
-            set { _leavename = value; }
-            get { return _leavename; }
+            set { _schname = value; }
+            get { return _schname; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public decimal MinUnit
+        public string Starttime
         {
-            set { _minunit = value; }
-            get { return _minunit; }
+            set { _starttime = value; }
+            get { return _starttime; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public int Unit
+        public string Endtime
         {
-            set { _unit = value; }
-            get { return _unit; }
+            set { _endtime = value; }
+            get { return _endtime; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public int RemaindProc
+        public int Lateminutes
         {
-            set { _remaindproc = value; }
-            get { return _remaindproc; }
+            set { _lateminutes = value; }
+            get { return _lateminutes; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public int RemaindCount
+        public int Earlyminutes
         {
-            set { _remaindcount = value; }
-            get { return _remaindcount; }
+            set { _earlyminutes = value; }
+            get { return _earlyminutes; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string ReportSymbol
+        public int Checkin
         {
-            set { _reportsymbol = value; }
-            get { return _reportsymbol; }
+            set { _checkin = value; }
+            get { return _checkin; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public decimal Deduct
+        public int Checkout
         {
-            set { _deduct = value; }
-            get { return _deduct; }
+            set { _checkout = value; }
+            get { return _checkout; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string Color
+        public string Checkintime1
+        {
+            set { _checkintime1 = value; }
+            get { return _checkintime1; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Checkintime2
+        {
+            set { _checkintime2 = value; }
+            get { return _checkintime2; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Checkouttime1
+        {
+            set { _checkouttime1 = value; }
+            get { return _checkouttime1; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Checkouttime2
+        {
+            set { _checkouttime2 = value; }
+            get { return _checkouttime2; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Color
         {
             set { _color = value; }
             get { return _color; }
@@ -97,10 +142,10 @@ namespace Models
         /// <summary>
         /// 
         /// </summary>
-        public int Classify
+        public decimal Autobind
         {
-            set { _classify = value; }
-            get { return _classify; }
+            set { _autobind = value; }
+            get { return _autobind; }
         }
         #endregion Model
         #region ILoadable 成员

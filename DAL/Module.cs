@@ -4,32 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Models
+namespace DAL
 {
-    public class RunNumSchclass : ILoadable
+    [Serializable]
+    public class Module : ILoadable
     {
-        public RunNumSchclass()
+        public Module()
         { }
-        #region Model
-        private string _runid;
-        private string _schclassid;
+        #region Models
+        private int _id;
+        private string _name;
+        private string _signcode;
+        private string _syscode;
         /// <summary>
         /// 
         /// </summary>
-        public string RunID
+        public int Id
         {
-            set { _runid = value; }
-            get { return _runid; }
+            set { _id = value; }
+            get { return _id; }
         }
         /// <summary>
         /// 
         /// </summary>
-        public string SchclassID
+        public string Name
         {
-            set { _schclassid = value; }
-            get { return _schclassid; }
+            set { _name = value; }
+            get { return _name; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Signcode
+        {
+            set { _signcode = value; }
+            get { return _signcode; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Syscode
+        {
+            set { _syscode = value; }
+            get { return _syscode; }
         }
         #endregion Model
+
         #region ILoadable 成员
 
         void ILoadable.Loading(System.Data.IDataReader dr)

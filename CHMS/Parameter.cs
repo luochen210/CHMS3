@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Models;
+using DAL;
 using BLL;
+using Models;
+
 namespace CHMS
 {
     public class Parameter

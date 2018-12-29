@@ -16,7 +16,7 @@ namespace BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(Models.Schclass model)
+		public int Add(DAL.Schclass model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Schclass(");
@@ -57,7 +57,7 @@ namespace BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public int Update(Models.Schclass model)
+		public int Update(DAL.Schclass model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update Schclass set ");
@@ -127,7 +127,7 @@ namespace BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Models.Schclass GetModel(string Schclassid)
+		public DAL.Schclass GetModel(string Schclassid)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
@@ -136,7 +136,7 @@ namespace BLL
 			SqlParameter[] parameters = {
 					new SqlParameter("@Schclassid", SqlDbType.VarChar,50)};
 			parameters[0].Value = Schclassid;
-            IList<Models.Schclass> result = DbHelperSQL.GetIList<Models.Schclass>(strSql.ToString(), CommandType.Text, parameters);
+            IList<DAL.Schclass> result = DbHelperSQL.GetIList<DAL.Schclass>(strSql.ToString(), CommandType.Text, parameters);
             if (result!=null && result.Count > 0)
 			{
                 return result[0];
@@ -150,7 +150,7 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-        public IList<Models.Schclass> GetSchclassList(string strWhere)
+        public IList<DAL.Schclass> GetSchclassList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
             strSql.Append("select Schclassid,Schname,Starttime,Endtime,Lateminutes,Earlyminutes,Checkin,Checkout,Checkintime1,Checkintime2,Checkouttime1,Checkouttime2,Color,Autobind,IsShow");
@@ -159,9 +159,9 @@ namespace BLL
 			{
 				strSql.Append(strWhere);
 			}
-			return DbHelperSQL.GetIList<Models.Schclass>(strSql.ToString(),CommandType.Text);
+			return DbHelperSQL.GetIList<DAL.Schclass>(strSql.ToString(),CommandType.Text);
 		}
-        public IList<Models.Schclass> GetSchclassListByID(string strWhere)
+        public IList<DAL.Schclass> GetSchclassListByID(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select Schclassid,Schname,Starttime,Endtime,Lateminutes,Earlyminutes,Checkin,Checkout,Checkintime1,Checkintime2,Checkouttime1,Checkouttime2,Color,Autobind,IsShow");
@@ -170,7 +170,7 @@ namespace BLL
             {
                 strSql.Append(strWhere);
             }
-            return DbHelperSQL.GetIList<Models.Schclass>(strSql.ToString(), CommandType.Text);
+            return DbHelperSQL.GetIList<DAL.Schclass>(strSql.ToString(), CommandType.Text);
         }	
 
 		#endregion  成员方法

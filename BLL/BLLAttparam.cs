@@ -8,7 +8,7 @@ namespace BLL
 {
    public class BLLAttparam:SQLHelper
     {
-        public Models.Attparam GetModel(int IDX)
+        public DAL.Attparam GetModel(int IDX)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
@@ -17,7 +17,7 @@ namespace BLL
 			SqlParameter[] parameters = {
 					new SqlParameter("@IDX", SqlDbType.Int,4)};
 			parameters[0].Value = IDX;
-            IList<Models.Attparam> result = DbHelperSQL.GetIList<Models.Attparam>(strSql.ToString(), CommandType.Text);
+            IList<DAL.Attparam> result = DbHelperSQL.GetIList<DAL.Attparam>(strSql.ToString(), CommandType.Text);
 	
 			if(result!=null && result.Count>0)
 			{
@@ -32,7 +32,7 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public IList<Models.Attparam> GetList(string strWhere)
+		public IList<DAL.Attparam> GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select IDX,ParaType,ParaName,ParaValue ");
@@ -41,7 +41,7 @@ namespace BLL
 			{
 				strSql.Append(" where "+strWhere);
 			}
-			return DbHelperSQL.GetIList<Models.Attparam>(strSql.ToString(),CommandType.Text);
+			return DbHelperSQL.GetIList<DAL.Attparam>(strSql.ToString(),CommandType.Text);
 		}
     }    
 }

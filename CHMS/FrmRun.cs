@@ -7,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-//下载源码到51aspx
+
 namespace CHMS
 {
     public partial class FrmRun : Form
     {
         private string DoType = "Insert";
         private BLLRunNum Ation = new BLLRunNum();
-        private DAL.SqlProvider DbHelperSQL;
+        private DAL.SQLHelper DbHelperSQL;
         public FrmRun()
         {
             InitializeComponent();
-            DbHelperSQL = new DAL.SqlProvider();
+            DbHelperSQL = new DAL.SQLHelper();
         }
         private void btnColse_Click(object sender, EventArgs e)
         {
@@ -81,9 +81,9 @@ namespace CHMS
             this.dgvSchclass.DataSource = new BLLSchclass().GetSchclassList("");
             this.dgvSchclass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private Models.RunNum GetRunNumModel()
+        private DAL.RunNum GetRunNumModel()
         {
-            Models.RunNum model = new Models.RunNum();
+            DAL.RunNum model = new DAL.RunNum();
             model.RunID = txtRunID.Text;
             model.Name = txtName.Text;
             model.Startdate = dtStartdate.Value;
@@ -114,7 +114,7 @@ namespace CHMS
             {
                 if (e.RowIndex != -1)
                 {
-                    Models.RunNum model = this.dgvRun.CurrentRow.DataBoundItem as Models.RunNum;
+                    DAL.RunNum model = this.dgvRun.CurrentRow.DataBoundItem as DAL.RunNum;
                     txtRunID.Text = model.RunID;
                     txtName.Text = model.Name;
                     dtStartdate.Value = model.Startdate;
@@ -164,7 +164,7 @@ namespace CHMS
             {
                 for (int i = 0; i < dgvSchclass.Rows.Count; i++)
                 {
-                    Models.Schclass model = this.dgvSchclass.Rows[i].DataBoundItem as Models.Schclass;
+                    DAL.Schclass model = this.dgvSchclass.Rows[i].DataBoundItem as DAL.Schclass;
                     if (model.IsShow)
                     {
                         sb.Append(string.Format("INSERT INTO [RunNumSchclass]([RunID],[SchclassID])VALUES('{0}','{1}');",txtRunID.Text,model.Schclassid));

@@ -51,21 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttLog.cs" />
-    <Compile Include="Attparam.cs" />
-    <Compile Include="Company.cs" />
-    <Compile Include="Departments.cs" />
-    <Compile Include="Holidays.cs" />
-    <Compile Include="ILoadable.cs" />
-    <Compile Include="LeaveClass.cs" />
-    <Compile Include="Machines.cs" />
-    <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs" />
-    <Compile Include="RunNum.cs" />
-    <Compile Include="RunNumSchclass.cs" />
-    <Compile Include="SchClass.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Userinfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

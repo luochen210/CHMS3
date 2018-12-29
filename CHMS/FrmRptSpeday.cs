@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DAL;
-//下载源码到51aspx
+
 namespace CHMS
 {
     public partial class FrmRptSpeday : Form
     {
-        private DAL.SqlProvider DbHelperSQL;
+        private DAL.SQLHelper DbHelperSQL;
         public FrmRptSpeday()
         {
             InitializeComponent();
-            DbHelperSQL = new DAL.SqlProvider();
+            DbHelperSQL = new DAL.SQLHelper();
         }
         private void frmRptSpeday_Load(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace CHMS
                 if (rtn.Result == 1)
                 {
                     this.dgvSpedayLog.AutoGenerateColumns = false;
-                    this.dgvSpedayLog.DataSource = ds.Tables[0];//5!1+a+s+p+x
+                    this.dgvSpedayLog.DataSource = ds.Tables[0];
                     this.dgvSpedayLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 }
             }

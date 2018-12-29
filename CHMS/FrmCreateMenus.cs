@@ -33,7 +33,7 @@ namespace CHMS
             {
                 if (dt.Rows[i]["ParentItemID"].ToString() != "0")
                 {
-                    new SqlProvider().ExcuteNonQuery(string.Format(strSql, dt.Rows[i]["FormName"].ToString(), dt.Rows[i]["ParentItemID"].ToString(), dt.Rows[i]["Text"].ToString()), CommandType.Text);
+                    new SQLHelper().ExcuteNonQuery(string.Format(strSql, dt.Rows[i]["FormName"].ToString(), dt.Rows[i]["ParentItemID"].ToString(), dt.Rows[i]["Text"].ToString()), CommandType.Text);
                 }                
             }
         }

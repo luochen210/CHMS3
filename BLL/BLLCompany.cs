@@ -21,7 +21,7 @@ namespace BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Insert(Models.Company model)
+        public int Insert(DAL.Company model)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("insert into COMPANY(");
@@ -33,7 +33,7 @@ namespace BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public int Update(Models.Company model)
+        public int Update(DAL.Company model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update COMPANY set ");
@@ -57,11 +57,11 @@ namespace BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Models.Company GetModel()
+        public DAL.Company GetModel()
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1 COMPANYID,City,Country,Addr,Principal,ChineseName,EnglishName,Tel,Mobile,Fax,Email,ZIP,Reamark,WebSite from COMPANY ");
-            IList<Models.Company> result = DbHelperSQL.GetIList<Models.Company>(strSql.ToString(),CommandType.Text);
+            IList<DAL.Company> result = DbHelperSQL.GetIList<DAL.Company>(strSql.ToString(),CommandType.Text);
             if (result != null && result.Count > 0)
             {
                 return result[0];

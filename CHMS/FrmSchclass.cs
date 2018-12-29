@@ -72,9 +72,9 @@ namespace CHMS
             this.dgvSchclass.DataSource = Action.GetSchclassList("");
             this.dgvSchclass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private Models.Schclass GetSchclassModel()
+        private DAL.Schclass GetSchclassModel()
         {
-            Models.Schclass model = new Models.Schclass();
+            DAL.Schclass model = new DAL.Schclass();
             model.Schclassid = txtSchclassId.Text;
             model.Schname = txtSchname.Text;
             model.Starttime = txtStartTime.Text;
@@ -120,7 +120,7 @@ namespace CHMS
                 if (e.RowIndex != -1)
                 {
                     ToDoType = "Update";
-                    Models.Schclass model = this.dgvSchclass.CurrentRow.DataBoundItem as Models.Schclass;
+                    DAL.Schclass model = this.dgvSchclass.CurrentRow.DataBoundItem as DAL.Schclass;
                     txtSchclassId.Text = model.Schclassid;
                     txtSchname.Text = model.Schname;
                     txtStartTime.Text = model.Starttime;

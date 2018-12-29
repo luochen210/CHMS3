@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using DAL;
-using Models;
+
 namespace BLL
 {
     public class BLLDepartments : SQLHelper
